@@ -3,6 +3,10 @@
 
 #include <stdexcept>
 #include <iostream>
+#include "nlohmann/json.hpp"
+
+using json = nlohmann::json; // for easy json handle
+
 
 // [TO DO]: delete normV2 because I think we no longer need it
 
@@ -34,6 +38,8 @@ struct Discretization {
      */
     inline Discretization(double dt, double Tf, int N, double v_max, double L, int Nx);
 
+    inline json to_json() const;
+
     inline ~Discretization();
 };
 
@@ -64,6 +70,23 @@ Discretization::Discretization(double dt, double Tf, int N, double v_max, double
     X = new double[Nx+1];
     dx = L / Nx; // Here the number of space node is Nx+1
     for (int i = 0; i < Nx + 1; ++i) { X[i] = dx * i; }
+}
+
+json Discretization::to_json() const {
+    json j;
+    j["dt"] = dt;
+    j["Nt"] = Nt;
+    j["N"] = N;
+    j["normV2"] = normV2;
+    j["L"] = L;
+    j["Nx"] = Nx;
+    j["dx"] = dx;
+
+    // Export arrays as std::vector for JSON
+    j["V"] = std::vector<double>(V, V + 2 * N);
+    j["X"] = std::vector<double>(X, X + Nx + 1);
+
+    return j;
 }
 
 /// Delete the velocity and space arrays (dynamically allocated)

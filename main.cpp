@@ -63,7 +63,9 @@ int main() {
 
     const Matrix ρ = solve(pb);
 
+    // Save results
     ρ.exportToCSV("Results/ρ_transport.csv");
+    pb.export_json("Results/ρ_transport.json");
 
     // Automatic clean memory for ρ at the end -> [TO DO] Check that
 

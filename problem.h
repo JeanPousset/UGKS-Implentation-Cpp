@@ -1,9 +1,11 @@
 #ifndef PROBLEM_H
 #define PROBLEM_H
 
+#include "collision.h"
+
 #include <functional>
 #include <memory> // for unique pointers
-#include "collision.h"
+#include <string>
 
 class Pb_BGK;
 
@@ -24,15 +26,17 @@ struct Problem {
     double C_;
     double D_;
 
-    Discretization δ_; ///< Space, velocity and time discretization information
+    const Discretization &δ_; /**< Space, velocity and time discretization information -> reference to not make a copy
+                                    that will create problem with the dynamic arrays */
     std::unique_ptr<Collision> collision_; ///< Pointer to an instance of a subclass of Collision (polymorphism)
     std::function<double(double, double)> f0; ///< Initial distribution
     std::function<double(double)> ρ0; ///< Initial density
 
     Problem(double σ, double eta, double ε, const Discretization &δ, std::unique_ptr<Collision> collision,
             const std::function<double(double, double)> &f0, const std::function<double(double)> &ρ0);
-};
 
+    void export_json(const std::string &json_name) const;
+};
 
 
 constexpr double C_INT = 0.14; // (1?) : do I need a more precise approximation
