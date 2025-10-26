@@ -1,6 +1,5 @@
 #include <iostream>
 #include <utility> // for move constructor / assignment tests
-#include "matrix.h"
 #include "solver.h"
 
 /*
@@ -44,13 +43,6 @@ using std::endl;
 
 int main() {
 
-
-    // Problem definition
-    auto ρ0 = [](double x) {return C_INT * exp(-(x - 0.5) * (x - 0.5));};
-    auto f0 = [](double x, double v) {return exp(-(x - 0.5) * (x - 0.5) - 10. * (1. - v) * (1. - v));};
-    constexpr double σ = 1., eta = 1., ε = 100.;
-    const Pb_BGK bgk(σ,eta,ε,f0,ρ0);
-
     // Discretization
     constexpr double dt = 1e-5, Tf = 0.1;
     constexpr double v_max = 1.;
@@ -59,9 +51,19 @@ int main() {
     constexpr int Nx = 100;
     const Discretization δ(dt, Tf, N, v_max, L, Nx);
 
-    const Matrix ρ = solve(bgk, δ);
+    // Collision (unique Collision ptr for polymorphism)
+    std::unique_ptr<Collision> collision_ptr = std::make_unique<BGK>();
 
-    ρ.display();
+    // Problem definition
+    auto ρ0 = [](double x) {return C_INT * exp(-(x - 0.5) * (x - 0.5));};
+    auto f0 = [](double x, double v) {return exp(-(x - 0.5) * (x - 0.5) - 10. * (1. - v) * (1. - v));};
+    constexpr double σ = 1., eta = 1., ε = 100.;
+    const Problem pb(σ,eta,ε, δ, (std::move(collision_ptr)), f0,ρ0);
+
+
+    const Matrix ρ = solve(pb);
+
+    ρ.exportToCSV("Results/ρ_transport.csv");
 
     // Automatic clean memory for ρ at the end -> [TO DO] Check that
 
@@ -78,6 +80,7 @@ int main() {
  *
  *   - delete solver file and put its content in updates.cpp (name everything solver)
  *
+ *   - move solve function into Problem class (maybe all solver functions)
  */
 
 

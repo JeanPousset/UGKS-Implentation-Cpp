@@ -6,20 +6,7 @@
 // much indirect accesses and it'd be better to use direct values as parameters
 
 
-// --------------------- Basic evaluations ---------------------//
-double compute_A(const Problem &pb, double dt) {
-    const double w = pb.λ_star() * pb.σ * dt / (pb.eta * pb.ε);
-    return (exp(w) - 1.) / (pb.eta * w);
-}
 
-double compute_C(const Problem &pb, double dt) {
-    return 1. / pb.eta - compute_A(pb, dt);
-}
-
-double compute_D(const Problem &pb, double dt) {
-    const double w = pb.λ_star() * pb.σ * dt / (pb.eta * pb.ε);
-    return pb.ε / (pb.σ * pb.λ_star()) * (compute_C(pb, dt) - compute_A(pb, dt)) + pb.ε * exp(w) / (pb.eta * pb.σ * pb.λ_star());
-}
 
 // [TO DO] : Formulate this into a mat / vector product to speed up (using Blas) -> adapt other function in consequences
 // J_i^(-,n)

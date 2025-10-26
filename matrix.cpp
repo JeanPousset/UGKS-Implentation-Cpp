@@ -1,6 +1,7 @@
 #include "matrix.h"
 #include <iostream>
-
+#include <fstream>
+#include <iomanip>  // for std::setprecision
 
 // ------------ Constructors ------------
 
@@ -19,7 +20,7 @@ Matrix::Matrix(const Matrix &mat) {
     rows = mat.rows;
     cols = mat.cols;
     data = new double [rows * cols];
-    for (int i = 0; i< rows * cols; i++) { data[i] = mat.data[i]; } // deep copy of the right data
+    for (int i = 0; i < rows * cols; i++) { data[i] = mat.data[i]; } // deep copy of the right data
 }
 
 // Move constructor
@@ -46,7 +47,7 @@ Matrix &Matrix::operator=(const Matrix &mat) {
         rows = mat.rows;
         cols = mat.cols;
         data = new double [rows * cols];
-        for (int i = 0; i< rows * cols; i++) { data[i] = mat.data[i]; } // deep copy of the right data
+        for (int i = 0; i < rows * cols; i++) { data[i] = mat.data[i]; } // deep copy of the right data
     }
     return *this;
 }
@@ -66,21 +67,21 @@ Matrix &Matrix::operator=(Matrix &&mat) noexcept {
 }
 
 // ------------ GETTERS ------------
-/**
- * Returns matrix number of row
- */
+
+//Returns matrix number of row
 int Matrix::n_rows() const {
     return rows;
 }
 
-/**
- * Returns matrix' number of row
- */
+// Returns matrix' number of row
 int Matrix::n_cols() const {
     return cols;
 }
 
-//
+
+// IO OPERATIONS
+
+// Display a matrix in its natural shape
 void Matrix::display() const {
     std::cout << "[(" << rows << "," << cols << ") matrix] :" << std::endl;
     for (int i = 0; i < rows; i++) {
@@ -89,4 +90,34 @@ void Matrix::display() const {
         }
         std::cout << std::endl;
     }
+}
+
+// write a matrix in a CSV file
+void Matrix::exportToCSV(const std::string &filename, char delimiter, int precision) const {
+
+    // Open file in read mode (delete its previous content)
+    std::ofstream file(filename);
+    if (!file.is_open()) {
+        throw std::runtime_error("[Matrix::exportToCSV] Error : can't open file " + filename);
+    }
+
+    if (precision == 0) {
+        // default precision is set to have the exact data
+        file << std::setprecision(std::numeric_limits<double>::max_digits10);
+    } else {
+        file << std::setprecision(precision);
+    }
+    // write matrix
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols - 1; ++j) {
+            file << data[i * cols + j];
+            file << delimiter;
+        }
+        // special case : no delimiter at the end
+        file << data[i * cols + cols - 1];
+        file << "\n"; // new row
+    }
+
+    file.close();
+    std::cout << "==> " << filename << " successfully exported" << std::endl;
 }

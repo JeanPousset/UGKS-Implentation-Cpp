@@ -1,6 +1,7 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 #include <stdexcept>
+#include <string>
 
 
 class Matrix {
@@ -31,6 +32,11 @@ public:
      */
     Matrix(Matrix &&mat) noexcept;
 
+
+    // DESTRUCTOR
+
+    /** @brief Destructor for any matrix */
+    ~Matrix();
 
     // OPERATORS
 
@@ -72,7 +78,6 @@ public:
 
 
 
-
     // GETTERS
 
     /** @brief Returns number of rows of the matrix */
@@ -81,11 +86,21 @@ public:
     /** @brief Returns number of columns of the matrix */
     int n_cols() const;
 
+
+    // IO OPERATIONS
+
     /** @brief Display a matrix in its natural shape */
     void display() const;
 
-    /** @brief Destructor for any matrix */
-    ~Matrix();
+    /**
+     * @brief Write matrix data in a CSV file
+     * @param filename name of the CSV file
+     * @param delimiter by default : ','. Can also be ';' ' ' '\\t' '`' or ':'
+     * @param precision default (0) set maximum precision so that no information is lost
+     */
+    void exportToCSV(const std::string &filename, char delimiter = ',', int precision = 0) const;
+
+
 };
 
 

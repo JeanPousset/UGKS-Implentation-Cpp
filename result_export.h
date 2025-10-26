@@ -1,4 +1,0 @@
-#ifndef RESULT_EXPORT_H
-#define RESULT_EXPORT_H
-
-#endif //RESULT_EXPORT_H
