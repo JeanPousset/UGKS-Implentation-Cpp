@@ -12,6 +12,10 @@ add_executable(UGKS main.cpp
         evaluations.h
         updates.cpp
         updates.h
+        solver.cpp
+        solver.h
+        result_export.cpp
+        result_export.h
 )
 target_compile_options(UGKS PRIVATE -Wall -Wextra -Wpedantic)
 

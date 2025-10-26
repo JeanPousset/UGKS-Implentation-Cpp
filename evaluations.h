@@ -5,28 +5,29 @@
 #include "matrix.h"
 
 
-
-double A(const Problem& pb);//A(double δt,double σ,double eta, double ε);
-double C(const Problem& pb);//A(double δt,double σ,double eta, double ε);
-double D(const Problem& pb);//A(double δt,double σ,double eta, double ε);
+double compute_A(const Problem &pb, double dt); //A(double δt,double σ,double eta, double ε);
+double compute_C(const Problem &pb, double dt); //A(double δt,double σ,double eta, double ε);
+double compute_D(const Problem &pb, double dt); //A(double δt,double σ,double eta, double ε);
 
 /// @brief return the value of J_i^(-,n)
-double J_i_m(const double* V, const double* F_n_i, int N);
+double J_i_m(const double *V, const double *F_n_i, int N);
 
 /// @brief return the value of J_i^(+,n)
-double J_i_p(const double* V, const double* F_n_i, int N);
+double J_i_p(const double *V, const double *F_n_i, int N);
 
 /**
- * @brief Evaluate macroscopic interface values Φ_i+1/2 for i in [1:2N-1]
+ * @brief Evaluate microscopic values Φ_i+1/2,j and macroscopic values φ_i+1/2 at interfaces (i in [1:Nx], j in [1:2N])
  *
+ * @param φ matrix of microscopic interface values to evaluate
  * @param Φ Array of macroscopic interface values to evaluate
- * @param V Speed discretization array
- * @param F_n Distribution matrix (for each cell i and each speed j) at time n
- * @param ρ_n Densities array (for each cell) at time n
- * @param pb Problem settings
+ * @param F Distribution matrix (for each space "node" i and each speed j) at time n
+ * @param ρ Densities values (for each space node i in [1,Nx+1]) at time n
  * @param δ Discretization information
+ * @param A coefficient A (pre-computed)
+ * @param C coefficient C (pre-computed)
+ * @param D coefficient D (pre-computed)
  */
-void macroscopic_flux(double* Φ, const double *V, const Matrix& F_n, const double* ρ_n, const Problem& pb, const Discretization& δ);
-
+void micro_macro_flux(Matrix &φ, double *Φ, const Matrix &F, const double *ρ, const Discretization &δ, double A,
+                      double C, double D);
 
 #endif //EVALUATIONS_H
