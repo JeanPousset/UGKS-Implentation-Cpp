@@ -6,8 +6,6 @@
 // much indirect accesses and it'd be better to use direct values as parameters
 
 
-
-
 // [TO DO] : Formulate this into a mat / vector product to speed up (using Blas) -> adapt other function in consequences
 // J_i^(-,n)
 double J_i_m(const double *V, const double *F_n_i, int N) {

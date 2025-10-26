@@ -1,2 +1,7 @@
 .DS_Store
 .idea/
+UGKS
+cmake-build-debug/
+Results/plots.asv
+Results/read_CSV_matrix.asv
+Results/read_json.asv

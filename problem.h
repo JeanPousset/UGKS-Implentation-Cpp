@@ -2,6 +2,7 @@
 #define PROBLEM_H
 
 #include "collision.h"
+#include "evaluations.h"
 
 #include <functional>
 #include <memory> // for unique pointers
@@ -36,6 +37,10 @@ struct Problem {
             const std::function<double(double, double)> &f0, const std::function<double(double)> &ρ0);
 
     void export_json(const std::string &json_name) const;
+
+    void density_update(double *ρ_np1, const double *ρ_n, const double *Φ) const;
+    void time_step(Matrix &F, double *ρ_np1, double *Φ, Matrix &φ, const double *ρ_n) const;
+    Matrix solve() const;
 };
 
 

@@ -5,10 +5,6 @@
 #include "matrix.h"
 
 
-double compute_A(const Problem &pb, double dt); //A(double δt,double σ,double eta, double ε);
-double compute_C(const Problem &pb, double dt); //A(double δt,double σ,double eta, double ε);
-double compute_D(const Problem &pb, double dt); //A(double δt,double σ,double eta, double ε);
-
 /// @brief return the value of J_i^(-,n)
 double J_i_m(const double *V, const double *F_n_i, int N);
 

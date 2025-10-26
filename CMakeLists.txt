@@ -12,8 +12,6 @@ add_executable(UGKS main.cpp
         problem.h
         evaluations.cpp
         evaluations.h
-        solver.cpp
-        solver.h
         collision.cpp
         collision.h
         discretization.h

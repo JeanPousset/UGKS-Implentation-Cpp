@@ -1,6 +1,6 @@
 #include <iostream>
 #include <utility> // for move constructor / assignment tests
-#include "solver.h"
+#include "problem.h"
 
 /*
 // [OLD] Matrix constructor and assignments (copy and move) tests
@@ -61,14 +61,13 @@ int main() {
     const Problem pb(σ,eta,ε, δ, (std::move(collision_ptr)), f0,ρ0);
 
 
-    const Matrix ρ = solve(pb);
+    const Matrix ρ = pb.solve();
 
     // Save results
     ρ.exportToCSV("Results/ρ_transport.csv");
-    pb.export_json("Results/ρ_transport.json");
+    pb.export_json("Results/pb_transport.json");
 
     // Automatic clean memory for ρ at the end -> [TO DO] Check that
-
     return 0;
 }
 
@@ -77,9 +76,7 @@ int main() {
  * Ideas :
  *   - make a new class Collision for the operator collision instead of problem.
  *      -> then create a class problem with at least two members : collision and discretization so it computes A,C,D and other coeffs
- *
- *   - Change N to Nv ? No Nv = 2N
- *
+ * *
  *   - delete solver file and put its content in updates.cpp (name everything solver)
  *
  *   - move solve function into Problem class (maybe all solver functions)
