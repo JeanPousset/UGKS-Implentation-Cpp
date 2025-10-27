@@ -11,12 +11,13 @@ ms = 8; % marker size
 fs = 20; % font size
 
 figure(1); hold on
-plot(pb.X, rho(1,:), "k-", 'LineWidth', 1);
-plot(pb.X, rho(floor(end/2),:)',"bx", 'MarkerSize', ms);
-plot(pb.X, rho(end,:)',"rh", 'MarkerSize', ms);
-plot(x,rho_tf,"g-",'LineWidth',2);
+plot(pb.X, rho(1,:), "k-.", 'LineWidth', 1);
+plot(x,rho_tf,'Color', [0, 0.01, 0.8],'LineWidth',1.5);
+% plot(pb.X, rho(floor(end/2),:)',"bx", 'MarkerSize', ms);
+plot(pb.X, rho(end,:)',"r+", 'MarkerSize', ms);
 xlabel("$x$",'Interpreter',"latex", 'FontSize', fs);
 ylabel("$\rho~(density)$",'Interpreter',"latex", 'FontSize', fs);
-legend(["Initial data","$BGK_i$","$BGK_f$","$\rho_{ex}(t_f)$"], 'Interpreter', "latex", 'FontSize', fs, 'Location', "south");
+title("Densities for the transport case at final time t=0.1", 'FontSize',fs);
+legend(["Initial data","$\rho_{ex}(t_f)$","$BGK_f$"], 'Interpreter', "latex", 'FontSize', 0.8*fs, 'Location', "south");
 hold off
 
