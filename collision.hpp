@@ -2,8 +2,8 @@
 #define COLLISION_H
 
 
-#include "matrix.h"
-#include "discretization.h"
+#include "matrix.hpp"
+#include "discretization.hpp"
 
 #include <string>
 

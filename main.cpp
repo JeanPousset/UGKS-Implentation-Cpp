@@ -1,6 +1,6 @@
 #include <iostream>
 #include <utility> // for move constructor / assignment tests
-#include "problem.h"
+#include "problem.hpp"
 
 /*
 // [OLD] Matrix constructor and assignments (copy and move) tests

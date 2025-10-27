@@ -1,4 +1,4 @@
-#include "collision.h"
+#include "collision.hpp"
 
 
 // DISTRIBUTION UPDATES

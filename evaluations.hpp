@@ -1,8 +1,8 @@
 #ifndef EVALUATIONS_H
 #define EVALUATIONS_H
 
-#include "problem.h"
-#include "matrix.h"
+#include "problem.hpp"
+#include "matrix.hpp"
 
 
 /// @brief return the value of J_i^(-,n)

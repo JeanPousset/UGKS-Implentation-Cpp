@@ -1,4 +1,4 @@
-#include "matrix.h"
+#include "matrix.hpp"
 #include <iostream>
 #include <fstream>
 #include <iomanip>  // for std::setprecision

@@ -1,8 +1,8 @@
 #ifndef PROBLEM_H
 #define PROBLEM_H
 
-#include "collision.h"
-#include "evaluations.h"
+#include "collision.hpp"
+#include "evaluations.hpp"
 
 #include <functional>
 #include <memory> // for unique pointers
