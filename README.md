@@ -1,8 +1,27 @@
-# \[In Progress\] Unfied Gas Kinetic Scheme (UGKS) : implementation of a generalization in the diffusive limit
+# \[In Progress\] Unified Gas Kinetic Scheme (UGKS) : implementation of a generalization in the diffusive limit
 
 ## Description
 
 The goal of this project is to implement in C++ the method described in [*GENERALIZED UGK SCHEME IN THE DIFFUSIVE LIMIT*](https://arxiv.org/abs/2507.03385)  written by [Nicolas CROUSEILLES](https://people.rennes.inria.fr/Nicolas.Crouseilles/), [Julien MATHIAUD](https://julienmathiaud.perso.math.cnrs.fr/), and [Luc MIEUSSENS](https://www.math.u-bordeaux.fr/~lmieusse/index.html). This project is supervised by Julien Mathiaud.
+
+## Code architecture
+
+*File name with out extension (.hpp or .cpp) means that there are both .hpp and .cpp files.*
+
+```mermaid
+graph TD;
+ B[problem]--> A[main.cpp];
+ C[collision] --> B;
+ D[evaluations] --> B;
+ E[discretization.hpp] --> C;
+ F[matrix] --> C;
+ F[matrix] --> D;
+
+ 
+ 
+ 
+```
+
 
 ## Progress
 
