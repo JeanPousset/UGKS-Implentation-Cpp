@@ -15,6 +15,8 @@ add_executable(UGKS main.cpp
         collision.cpp
         collision.hpp
         discretization.hpp
+        tests.cpp
+        tests.hpp
 )
 target_compile_options(UGKS PRIVATE -Wall -Wextra -Wpedantic)
 

@@ -1,0 +1,44 @@
+%% Difffusion
+
+% Import results
+pb = read_json("pb_diffusion.json");
+rho = read_CSV_matrix("ρ_diffusion.csv");
+sigma = pb.sigma;
+
+
+% exact solution 
+t = linspace(0,pb.Nt*pb.dt,pb.Nt)';
+x = linspace(pb.X(1),pb.X(end),400); % here we take more than Nx to get a clean curve
+rho_diff = rho_exact_diffusion(t,x,sigma,-1); % exact solution
+
+
+% graphic parameters
+ms = 8; % marker size
+fs = 20; % font size
+
+figure(2); hold on
+
+plot(x,rho_diff(1,:), "g--.", 'LineWidth', 1)
+plot(pb.X, rho(1,:), "k+");
+plot(x, rho_diff(end,:), "b--.", 'LineWidth', 1)
+plot(pb.X, rho(end,:)',"r+", 'MarkerSize', ms);
+
+xlabel("$x$",'Interpreter',"latex", 'FontSize', fs);
+ylabel("$\rho~(density)$",'Interpreter',"latex", 'FontSize', fs);
+title("Densities for the diffusion case", 'FontSize',fs);
+legend(["$\rho_{ex}(t_0)$","$BGK(t_0)$", "$\rho_{ex}(t_f)$", "$BGK(t_f)$"], 'Interpreter', "latex", 'FontSize', 0.8*fs, 'Location', "north");
+hold off
+
+
+% Check of exponential decreasing behaviour
+lw = 1.5;
+
+figure(3); hold on
+
+plot(t,exp(-4*pi^2*t),"k-", 'LineWidth', 1);
+plot(t,decr_ex, "b--", 'LineWidth', lw);
+plot(t,decr_BGK, "r--", 'LineWidth', lw)
+
+legend(["$e^{-\alpha t}$", "abs", ], 'Interpreter', "latex")
+
+hold off

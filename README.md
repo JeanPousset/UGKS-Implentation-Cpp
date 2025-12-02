@@ -9,25 +9,33 @@ The goal of this project is to implement in C++ the method described in [*GENERA
 *File name with out extension (.hpp or .cpp) means that there are both .hpp and .cpp files.*
 
 ```mermaid
-graph TD;
- B[problem]--> A[main.cpp];
+graph TD; 
+ Z[tests] --> A[main.cpp];
+ B[problem]--> Z;
  C[collision] --> B;
  D[evaluations] --> B;
  E[discretization.hpp] --> C;
+ E --> D;
  F[matrix] --> C;
  F[matrix] --> D;
-
- 
- 
- 
 ```
 
 
 ## Progress
 
-- Implemented finite volume method for the BGK collision operator. Tested on transport case :
+- Implemented finite volume method for the BGK collision operator.
 
-![BGK for transport](Results/transport_BGK.png)
+  - Tested on transport case :
+    ![BGK for transport](Results/transport_BGK.png)
+
+  - Tested on diffusion case :
+    ![BGK for diffusion](Results/diffusion_BGK.png)
+
+  - Checked convergence towards equilibrium :
+    ![Convergence towards equilibrium](Results/diffusion_convergence.png)
+
+
+
 
 ## Documentation
 

@@ -10,7 +10,6 @@ using json = nlohmann::json; // for easy json handle
 
 // [TO DO]: delete normV2 because I think we no longer need it
 
-// (?3) Is the vector X useless -> if so delete it -> not really
 /**
  * @brief Gather information about time, space and velocity discretizations
  */
@@ -89,7 +88,7 @@ json Discretization::to_json() const {
     return j;
 }
 
-/// Delete the velocity and space arrays (dynamically allocated)
+/** @brief Delete the velocity and space arrays (dynamically allocated) */
 Discretization::~Discretization() {
     delete[] V;
     delete[] X;

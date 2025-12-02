@@ -1,6 +1,6 @@
 #include <iostream>
-#include <utility> // for move constructor / assignment tests
 #include "problem.hpp"
+#include "tests.hpp"
 
 /*
 // [OLD] Matrix constructor and assignments (copy and move) tests
@@ -37,37 +37,15 @@ one_mat.display();
 */
 
 
-using std::cout;
-using std::endl;
+using std::cout, std::endl;
 
 
 int main() {
 
-    // Discretization
-    constexpr double dt = 1e-5, Tf = 0.1;
-    constexpr double v_max = 1.;
-    constexpr int N = 50;
-    constexpr double L = 1.;
-    constexpr int Nx = 100;
-    const Discretization δ(dt, Tf, N, v_max, L, Nx);
+    //transport_test("Results/ρ_transport.csv","Results/pb_transport.json");
 
-    // Collision (unique Collision ptr for polymorphism)
-    std::unique_ptr<Collision> collision_ptr = std::make_unique<BGK>();
+    diffusion_test("Results/ρ_diffusion.csv","Results/pb_diffusion.json");
 
-    // Problem definition
-    auto ρ0 = [](double x) {return C_INT * exp(-(x - 0.5) * (x - 0.5));};
-    auto f0 = [](double x, double v) {return exp(-(x - 0.5) * (x - 0.5) - 10. * (1. - v) * (1. - v));};
-    constexpr double σ = 1., eta = 1., ε = 100.;
-    const Problem pb(σ,eta,ε, δ, (std::move(collision_ptr)), f0,ρ0);
-
-
-    const Matrix ρ = pb.solve();
-
-    // Save results
-    ρ.exportToCSV("Results/ρ_transport.csv");
-    pb.export_json("Results/pb_transport.json");
-
-    // Automatic clean memory for ρ at the end -> [TO DO] Check that
     return 0;
 }
 

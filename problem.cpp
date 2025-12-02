@@ -34,9 +34,9 @@ void Problem::export_json(const std::string &json_name) const {
 
     // build json
     json j = δ_.to_json();  // includes discretization data
-    j["σ"] = σ_;
+    j["sigma"] = σ_;
     j["eta"] = eta_;
-    j["ε"] = ε_;
+    j["epsilon"] = ε_;
     j["Collision"] = collision_->name();
 
     std::ofstream file(json_name);
