@@ -1,0 +1,7 @@
+<map id="Collision" name="Collision">
+<area shape="rect" id="Node000001" title="abstract class to handle various collision operators with polymorphism" alt="" coords="100,5,265,151"/>
+<area shape="rect" id="Node000002" href="$classBGK.html" title="class for the BGK collision operators, inherits form Collision" alt="" coords="5,199,171,324"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,164,123,200,118,197,137,161"/>
+<area shape="rect" id="Node000003" href="$classFockerPlank.html" title=" " alt="" coords="195,199,360,324"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="229,161,247,197,243,200,224,164"/>
+</map>
