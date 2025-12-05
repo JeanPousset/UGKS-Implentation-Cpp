@@ -1,0 +1,160 @@
+\doxysection{Problem Struct Reference}
+\hypertarget{struct_problem}{}\label{struct_problem}\index{Problem@{Problem}}
+
+
+Parameters that defines a problem.  
+
+
+
+
+{\ttfamily \#include $<$problem.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_problem_ae7b8eb84961b2eede611eb76b64633e9}\label{struct_problem_ae7b8eb84961b2eede611eb76b64633e9} 
+{\bfseries Problem} (double σ, double eta, double ε, const \mbox{\hyperlink{struct_discretization}{Discretization}} \&δ, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_collision}{Collision}} $>$ collision, const std\+::function$<$ double(double, double)$>$ \&\mbox{\hyperlink{struct_problem_ac5f023d074cb48d93e91f9133297c785}{f0}}, const std\+::function$<$ double(double)$>$ \&\mbox{\hyperlink{struct_problem_acd76bc12b08367f72bb3f03903803e52}{ρ0}})
+\item 
+void \mbox{\hyperlink{struct_problem_a0fb1a5ec39f0de6a3a73c4adf3087403}{export\+\_\+json}} (const std\+::string \&json\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em exports problem data into a json file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_problem_a5393604f9b013054589d6a77fd9432b5}{density\+\_\+update}} (double \texorpdfstring{$\ast$}{*}ρ\+\_\+np1, const double \texorpdfstring{$\ast$}{*}ρ\+\_\+n, const double \texorpdfstring{$\ast$}{*}Φ) const
+\begin{DoxyCompactList}\small\item\em Updates density vector ρ at time n+1 for each space node (x\+\_\+i i in \mbox{[}\mbox{[}1,Nx+1\mbox{]}\mbox{]}). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_problem_ad82575264f247ffdbec721b7d32dccce}{time\+\_\+step}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&F, double \texorpdfstring{$\ast$}{*}ρ\+\_\+np1, double \texorpdfstring{$\ast$}{*}Φ, \mbox{\hyperlink{class_matrix}{Matrix}} \&φ, const double \texorpdfstring{$\ast$}{*}ρ\+\_\+n) const
+\begin{DoxyCompactList}\small\item\em Computes problem variables (distribution F and densities ρ) at time n+1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{struct_problem_ad87ef395c47129c336a0904707917e7a}{solve}} () const
+\begin{DoxyCompactList}\small\item\em Solves the diffusion / transport problem with UGKS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_problem_a4ddb15f7ab05ceed31b627a00bd5fc34}\label{struct_problem_a4ddb15f7ab05ceed31b627a00bd5fc34} 
+double {\bfseries σ\+\_\+}
+\begin{DoxyCompactList}\small\item\em collision characteristic frequency \end{DoxyCompactList}\item 
+\Hypertarget{struct_problem_a02f42710cbee74c61f721e9e05dd4e76}\label{struct_problem_a02f42710cbee74c61f721e9e05dd4e76} 
+double {\bfseries eta\+\_\+}
+\begin{DoxyCompactList}\small\item\em coefficient in front of df/dt \end{DoxyCompactList}\item 
+\Hypertarget{struct_problem_a0222bc2a3ceed74dbac67335243d8574}\label{struct_problem_a0222bc2a3ceed74dbac67335243d8574} 
+double {\bfseries ε\+\_\+}
+\begin{DoxyCompactList}\small\item\em diffusion behaviour coefficient (normalized mean free path) \end{DoxyCompactList}\item 
+\Hypertarget{struct_problem_a55ff482518cb6097cad5f1d5021cd5f9}\label{struct_problem_a55ff482518cb6097cad5f1d5021cd5f9} 
+double {\bfseries A\+\_\+}
+\begin{DoxyCompactList}\small\item\em A(∆t,σ,η,ε) coefficient. \end{DoxyCompactList}\item 
+\Hypertarget{struct_problem_a9b25da86a8916c19fdbae181ba61bd3e}\label{struct_problem_a9b25da86a8916c19fdbae181ba61bd3e} 
+double {\bfseries C\+\_\+}
+\begin{DoxyCompactList}\small\item\em C(∆t,σ,η,ε) coefficient. \end{DoxyCompactList}\item 
+\Hypertarget{struct_problem_a58bbccbdcf9d8d2a20fa5f4f0dde806d}\label{struct_problem_a58bbccbdcf9d8d2a20fa5f4f0dde806d} 
+double {\bfseries D\+\_\+}
+\begin{DoxyCompactList}\small\item\em D(∆t,σ,η,ε) coefficient. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{struct_discretization}{Discretization}} \& \mbox{\hyperlink{struct_problem_ae2208161f11ea1856a628ea618f5d117}{δ\+\_\+}}
+\item 
+\Hypertarget{struct_problem_a14593c477ebb610e3f2bb79d8ccffdfa}\label{struct_problem_a14593c477ebb610e3f2bb79d8ccffdfa} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_collision}{Collision}} $>$ {\bfseries collision\+\_\+}
+\begin{DoxyCompactList}\small\item\em Pointer to an instance of a subclass of \doxylink{class_collision}{Collision} (polymorphism). \end{DoxyCompactList}\item 
+\Hypertarget{struct_problem_ac5f023d074cb48d93e91f9133297c785}\label{struct_problem_ac5f023d074cb48d93e91f9133297c785} 
+std\+::function$<$ double(double, double)$>$ {\bfseries f0}
+\begin{DoxyCompactList}\small\item\em Initial distribution. \end{DoxyCompactList}\item 
+\Hypertarget{struct_problem_acd76bc12b08367f72bb3f03903803e52}\label{struct_problem_acd76bc12b08367f72bb3f03903803e52} 
+std\+::function$<$ double(double)$>$ {\bfseries ρ0}
+\begin{DoxyCompactList}\small\item\em Initial density. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Parameters that defines a problem. 
+
+\begin{DoxyWarning}{Warning}
+function as a member is not optimized and create a cost at each call not a problem for us because problem functions are only called in problem initialization 
+\end{DoxyWarning}
+
+
+\label{doc-func-members}
+\Hypertarget{struct_problem_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_problem_a5393604f9b013054589d6a77fd9432b5}\index{Problem@{Problem}!density\_update@{density\_update}}
+\index{density\_update@{density\_update}!Problem@{Problem}}
+\doxysubsubsection{\texorpdfstring{density\_update()}{density\_update()}}
+{\footnotesize\ttfamily \label{struct_problem_a5393604f9b013054589d6a77fd9432b5} 
+void Problem\+::density\+\_\+update (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{ρ\+\_\+np1}{, }\item[{const double \texorpdfstring{$\ast$}{*}}]{ρ\+\_\+n}{, }\item[{const double \texorpdfstring{$\ast$}{*}}]{Φ}{}\end{DoxyParamCaption}) const}
+
+
+
+Updates density vector ρ at time n+1 for each space node (x\+\_\+i i in \mbox{[}\mbox{[}1,Nx+1\mbox{]}\mbox{]}). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em ρ\+\_\+np1} & densities at time n+1 (to be computed) \\
+\hline
+\mbox{\texttt{in}}  & {\em ρ\+\_\+n} & densities at time n \\
+\hline
+\mbox{\texttt{in}}  & {\em Φ} & macroscopic fluxes \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_problem_a0fb1a5ec39f0de6a3a73c4adf3087403}\index{Problem@{Problem}!export\_json@{export\_json}}
+\index{export\_json@{export\_json}!Problem@{Problem}}
+\doxysubsubsection{\texorpdfstring{export\_json()}{export\_json()}}
+{\footnotesize\ttfamily \label{struct_problem_a0fb1a5ec39f0de6a3a73c4adf3087403} 
+void Problem\+::export\+\_\+json (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json\+\_\+name}{}\end{DoxyParamCaption}) const}
+
+
+
+exports problem data into a json file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+\_\+name} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_problem_ad87ef395c47129c336a0904707917e7a}\index{Problem@{Problem}!solve@{solve}}
+\index{solve@{solve}!Problem@{Problem}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily \label{struct_problem_ad87ef395c47129c336a0904707917e7a} 
+\mbox{\hyperlink{class_matrix}{Matrix}} Problem\+::solve (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Solves the diffusion / transport problem with UGKS. 
+
+\begin{DoxyReturn}{Returns}
+densities values for each time step t\+\_\+k / space node x\+\_\+i, (k,i) in \mbox{[}1,Nt\mbox{]}x\mbox{[}1,Nx+1\mbox{]} 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+must be deleted when return
+\end{DoxyWarning}
+\Hypertarget{struct_problem_ad82575264f247ffdbec721b7d32dccce}\index{Problem@{Problem}!time\_step@{time\_step}}
+\index{time\_step@{time\_step}!Problem@{Problem}}
+\doxysubsubsection{\texorpdfstring{time\_step()}{time\_step()}}
+{\footnotesize\ttfamily \label{struct_problem_ad82575264f247ffdbec721b7d32dccce} 
+void Problem\+::time\+\_\+step (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{F}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{ρ\+\_\+np1}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{Φ}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{φ}{, }\item[{const double \texorpdfstring{$\ast$}{*}}]{ρ\+\_\+n}{}\end{DoxyParamCaption}) const}
+
+
+
+Computes problem variables (distribution F and densities ρ) at time n+1. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em F} & distribution F\+\_\+n to be updated into F\+\_\+n+1 \\
+\hline
+ & {\em ρ\+\_\+np1} & densities at time n+1 \\
+\hline
+\mbox{\texttt{in}}  & {\em Φ} & macroscopic fluxes \\
+\hline
+\mbox{\texttt{in}}  & {\em φ} & microscopics fluxes \\
+\hline
+\mbox{\texttt{in}}  & {\em ρ\+\_\+n} & \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_problem_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_problem_ae2208161f11ea1856a628ea618f5d117}\index{Problem@{Problem}!δ\_@{δ\_}}
+\index{δ\_@{δ\_}!Problem@{Problem}}
+\doxysubsubsection{\texorpdfstring{δ\_}{δ\_}}
+{\footnotesize\ttfamily \label{struct_problem_ae2208161f11ea1856a628ea618f5d117} 
+const \mbox{\hyperlink{struct_discretization}{Discretization}}\& Problem\+::δ\+\_\+}
+
+Space, velocity and time discretization information -\/\texorpdfstring{$>$}{>} reference to not make a copy that will create problem with the dynamic arrays 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+problem.\+hpp\item 
+problem.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,92 @@
+\doxysection{BGK Class Reference}
+\hypertarget{class_b_g_k}{}\label{class_b_g_k}\index{BGK@{BGK}}
+
+
+class for the \doxylink{class_b_g_k}{BGK} collision operators, inherits form \doxylink{class_collision}{Collision}  
+
+
+
+
+{\ttfamily \#include $<$collision.\+hpp$>$}
+
+Inheritance diagram for BGK\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_b_g_k}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_b_g_k_ad74e7673468843c8a5d796e3c8225db4}\label{class_b_g_k_ad74e7673468843c8a5d796e3c8225db4} 
+{\bfseries BGK} ()=default
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_b_g_k_ac966f990015fc487f8516b288a67cfa8}{λ\+\_\+star}} () const override
+\begin{DoxyCompactList}\small\item\em override star eigenvalue getter \doxylink{class_collision_ad7d898f36b440945e1a6e6c33570ea13}{Collision\+::λ\+\_\+star()} \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_b_g_k_aa1502fb4b2a6e0e6f7a11c8944efb14e}{name}} () const override
+\begin{DoxyCompactList}\small\item\em gives collision operator name, overrides \doxylink{class_collision_a5ea796e0ab6ac385ebbface1aebb8157}{Collision\+::name()} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_g_k_accf135b7654b4d0f83faf43c5175294d}{distribution\+\_\+update}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&F, const \mbox{\hyperlink{class_matrix}{Matrix}} \&φ, const double \texorpdfstring{$\ast$}{*}ρ\+\_\+np1, const \mbox{\hyperlink{struct_discretization}{Discretization}} \&δ, double σ, double eta, double ε) const override
+\begin{DoxyCompactList}\small\item\em compute the distribution update (F) for the \doxylink{class_b_g_k}{BGK} operator, overrides \doxylink{class_collision_aef2aea96e0643eb433449af5b223513b}{Collision\+::distribution\+\_\+update} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_collision}{Collision}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Collision} ()=default
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Collision} ()=default
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class for the \doxylink{class_b_g_k}{BGK} collision operators, inherits form \doxylink{class_collision}{Collision} 
+
+\label{doc-func-members}
+\Hypertarget{class_b_g_k_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_b_g_k_ac966f990015fc487f8516b288a67cfa8}\index{BGK@{BGK}!λ\_star@{λ\_star}}
+\index{λ\_star@{λ\_star}!BGK@{BGK}}
+\doxysubsubsection{\texorpdfstring{λ\_star()}{λ\_star()}}
+{\footnotesize\ttfamily \label{class_b_g_k_ac966f990015fc487f8516b288a67cfa8} 
+double BGK\+::λ\+\_\+star (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+override star eigenvalue getter \doxylink{class_collision_ad7d898f36b440945e1a6e6c33570ea13}{Collision\+::λ\+\_\+star()} 
+
+
+
+Implements \mbox{\hyperlink{class_collision_ad7d898f36b440945e1a6e6c33570ea13}{Collision}}.
+
+\Hypertarget{class_b_g_k_accf135b7654b4d0f83faf43c5175294d}\index{BGK@{BGK}!distribution\_update@{distribution\_update}}
+\index{distribution\_update@{distribution\_update}!BGK@{BGK}}
+\doxysubsubsection{\texorpdfstring{distribution\_update()}{distribution\_update()}}
+{\footnotesize\ttfamily \label{class_b_g_k_accf135b7654b4d0f83faf43c5175294d} 
+void BGK\+::distribution\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{F}{, }\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{φ}{, }\item[{const double \texorpdfstring{$\ast$}{*}}]{ρ\+\_\+np1}{, }\item[{const \mbox{\hyperlink{struct_discretization}{Discretization}} \&}]{δ}{, }\item[{double}]{σ}{, }\item[{double}]{eta}{, }\item[{double}]{ε}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+compute the distribution update (F) for the \doxylink{class_b_g_k}{BGK} operator, overrides \doxylink{class_collision_aef2aea96e0643eb433449af5b223513b}{Collision\+::distribution\+\_\+update} 
+
+
+
+Implements \mbox{\hyperlink{class_collision_aef2aea96e0643eb433449af5b223513b}{Collision}}.
+
+\Hypertarget{class_b_g_k_aa1502fb4b2a6e0e6f7a11c8944efb14e}\index{BGK@{BGK}!name@{name}}
+\index{name@{name}!BGK@{BGK}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_b_g_k_aa1502fb4b2a6e0e6f7a11c8944efb14e} 
+std\+::string BGK\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+gives collision operator name, overrides \doxylink{class_collision_a5ea796e0ab6ac385ebbface1aebb8157}{Collision\+::name()} 
+
+
+
+Implements \mbox{\hyperlink{class_collision_a5ea796e0ab6ac385ebbface1aebb8157}{Collision}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+collision.\+hpp\item 
+collision.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,109 @@
+\doxysection{Collision Class Reference}
+\hypertarget{class_collision}{}\label{class_collision}\index{Collision@{Collision}}
+
+
+abstract class to handle various collision operators with polymorphism  
+
+
+
+
+{\ttfamily \#include $<$collision.\+hpp$>$}
+
+Inheritance diagram for Collision\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_collision}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_collision_a1c247612eae832108bf79b78127f35f3}\label{class_collision_a1c247612eae832108bf79b78127f35f3} 
+{\bfseries Collision} ()=default
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_collision_ad7d898f36b440945e1a6e6c33570ea13}{λ\+\_\+star}} () const =0
+\begin{DoxyCompactList}\small\item\em getter for star operator eigenvalue \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_collision_aef2aea96e0643eb433449af5b223513b}{distribution\+\_\+update}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&F, const \mbox{\hyperlink{class_matrix}{Matrix}} \&φ, const double \texorpdfstring{$\ast$}{*}ρ\+\_\+np1, const \mbox{\hyperlink{struct_discretization}{Discretization}} \&δ, double σ, double eta, double ε) const =0
+\begin{DoxyCompactList}\small\item\em Compute distribution at time n+1. \end{DoxyCompactList}\item 
+\Hypertarget{class_collision_a9a6ff59d63efcf8a914ec221cb4d31c6}\label{class_collision_a9a6ff59d63efcf8a914ec221cb4d31c6} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Collision} ()=default
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_collision_a5ea796e0ab6ac385ebbface1aebb8157}{name}} () const =0
+\begin{DoxyCompactList}\small\item\em Return the name of the derived class (useful for JSON problem export). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+abstract class to handle various collision operators with polymorphism 
+
+\begin{DoxyNote}{Note}
+CONSTRUCTORS \+: Default constructors because these classes don\textquotesingle{}t have any attributes -\/\texorpdfstring{$>$}{>} necessary here because we don\textquotesingle{}t declare other constructors. 
+\end{DoxyNote}
+
+
+\label{doc-func-members}
+\Hypertarget{class_collision_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_collision_ad7d898f36b440945e1a6e6c33570ea13}\index{Collision@{Collision}!λ\_star@{λ\_star}}
+\index{λ\_star@{λ\_star}!Collision@{Collision}}
+\doxysubsubsection{\texorpdfstring{λ\_star()}{λ\_star()}}
+{\footnotesize\ttfamily \label{class_collision_ad7d898f36b440945e1a6e6c33570ea13} 
+virtual double Collision\+::λ\+\_\+star (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [pure virtual]}}
+
+
+
+getter for star operator eigenvalue 
+
+
+
+Implemented in \mbox{\hyperlink{class_b_g_k_ac966f990015fc487f8516b288a67cfa8}{BGK}}, and \mbox{\hyperlink{class_focker_plank_a1ec51c446ab7e79b4bdb9d7d7acf73fb}{Focker\+Plank}}.
+
+\Hypertarget{class_collision_aef2aea96e0643eb433449af5b223513b}\index{Collision@{Collision}!distribution\_update@{distribution\_update}}
+\index{distribution\_update@{distribution\_update}!Collision@{Collision}}
+\doxysubsubsection{\texorpdfstring{distribution\_update()}{distribution\_update()}}
+{\footnotesize\ttfamily \label{class_collision_aef2aea96e0643eb433449af5b223513b} 
+virtual void Collision\+::distribution\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{F}{, }\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{φ}{, }\item[{const double \texorpdfstring{$\ast$}{*}}]{ρ\+\_\+np1}{, }\item[{const \mbox{\hyperlink{struct_discretization}{Discretization}} \&}]{δ}{, }\item[{double}]{σ}{, }\item[{double}]{eta}{, }\item[{double}]{ε}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Compute distribution at time n+1. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em F} & distribution F\+\_\+n to be updated into F\+\_\+n+1 \\
+\hline
+\mbox{\texttt{in}}  & {\em φ} & microscopic fluxes \\
+\hline
+\mbox{\texttt{in}}  & {\em ρ\+\_\+np1} & densities at time n+1 \\
+\hline
+\mbox{\texttt{in}}  & {\em δ} & discretization \\
+\hline
+\mbox{\texttt{in}}  & {\em σ} & collision characteristic frequency \\
+\hline
+\mbox{\texttt{in}}  & {\em eta} & coefficient in front of df/dt \\
+\hline
+\mbox{\texttt{in}}  & {\em ε} & diffusion behaviour coefficient (normalized mean free path) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_b_g_k_accf135b7654b4d0f83faf43c5175294d}{BGK}}, and \mbox{\hyperlink{class_focker_plank_a851ff3d3918fb8b4f3ba0fc4e1f1d96b}{Focker\+Plank}}.
+
+\Hypertarget{class_collision_a5ea796e0ab6ac385ebbface1aebb8157}\index{Collision@{Collision}!name@{name}}
+\index{name@{name}!Collision@{Collision}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_collision_a5ea796e0ab6ac385ebbface1aebb8157} 
+virtual std\+::string Collision\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Return the name of the derived class (useful for JSON problem export). 
+
+
+
+Implemented in \mbox{\hyperlink{class_b_g_k_aa1502fb4b2a6e0e6f7a11c8944efb14e}{BGK}}, and \mbox{\hyperlink{class_focker_plank_aa384f90c7205fdba7072a46988179442}{Focker\+Plank}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+collision.\+hpp\end{DoxyCompactItemize}

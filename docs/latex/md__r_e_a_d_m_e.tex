@@ -1,0 +1,33 @@
+\chapter{\mbox{[}In Progress\mbox{]} Unified Gas Kinetic Scheme (UGKS) \+: implementation of a generalization in the diffusive limit }
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{\mbox{[}In Progress\mbox{]} Unified Gas Kinetic Scheme (UGKS) : implementation of a generalization in the diffusive limit@{[In Progress] Unified Gas Kinetic Scheme (UGKS) : implementation of a generalization in the diffusive limit}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Description}{Description}}\label{md__r_e_a_d_m_e_autotoc_md1}
+The goal of this project is to implement in C++ the method described in \href{https://arxiv.org/abs/2507.03385}{\texttt{{\itshape GENERALIZED UGK SCHEME IN THE DIFFUSIVE LIMIT}}} written by \href{https://people.rennes.inria.fr/Nicolas.Crouseilles/}{\texttt{Nicolas CROUSEILLES}}, \href{https://julienmathiaud.perso.math.cnrs.fr/}{\texttt{Julien MATHIAUD}}, and \href{https://www.math.u-bordeaux.fr/~lmieusse/index.html}{\texttt{Luc MIEUSSENS}}. This project is supervised by Julien Mathiaud.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Code architecture}{Code architecture}}\label{md__r_e_a_d_m_e_autotoc_md2}
+{\itshape File name with out extension (.hpp or .cpp) means that there are both .hpp and .cpp files.}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{graph\ TD;\ }
+\DoxyCodeLine{\ Z[tests]\ -\/-\/>\ A[main.cpp];}
+\DoxyCodeLine{\ B[problem]-\/-\/>\ Z;}
+\DoxyCodeLine{\ C[collision]\ -\/-\/>\ B;}
+\DoxyCodeLine{\ D[evaluations]\ -\/-\/>\ B;}
+\DoxyCodeLine{\ E[discretization.hpp]\ -\/-\/>\ C;}
+\DoxyCodeLine{\ E\ -\/-\/>\ D;}
+\DoxyCodeLine{\ F[matrix]\ -\/-\/>\ C;}
+\DoxyCodeLine{\ F[matrix]\ -\/-\/>\ D;}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{Progress}{Progress}}\label{md__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Implemented finite volume method for the \doxylink{class_b_g_k}{BGK} collision operator.
+\begin{DoxyItemize}
+\item Tested on transport case \+: 
+\item Tested on diffusion case \+: 
+\item Checked convergence towards equilibrium \+: 
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{\texorpdfstring{Documentation}{Documentation}}\label{md__r_e_a_d_m_e_autotoc_md4}
+I am documenting with Doxygen as I develop and will host the docs on Git\+Hub Pages for easier access.\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{\texorpdfstring{Bibliography}{Bibliography}}\label{md__r_e_a_d_m_e_autotoc_md5}
+Crouseilles, Nicolas \& Julien, Mathiaud \& Mieussens, Luc. (2025). Generalized UGK scheme in the diffusive limit. 10.\+48550/ar\+Xiv.2507.\+03385. \href{https://arxiv.org/abs/2507.03385}{\texttt{Ar\+Xiv link}} 

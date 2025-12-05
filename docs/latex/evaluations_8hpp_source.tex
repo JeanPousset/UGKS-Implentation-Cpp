@@ -1,0 +1,20 @@
+\doxysection{evaluations.\+hpp}
+\hypertarget{evaluations_8hpp_source}{}\label{evaluations_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EVALUATIONS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EVALUATIONS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}matrix.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}discretization.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00009\ \textcolor{keywordtype}{double}\ J\_i\_m(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *V,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *F\_n\_i,\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00012\ \textcolor{keywordtype}{double}\ J\_i\_p(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *V,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *F\_n\_i,\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{void}\ micro\_macro\_flux(\mbox{\hyperlink{class_matrix}{Matrix}}\ \&φ,\ \textcolor{keywordtype}{double}\ *Φ,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_matrix}{Matrix}}\ \&F,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *ρ,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_discretization}{Discretization}}\ \&δ,\ \textcolor{keywordtype}{double}\ A,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ C,\ \textcolor{keywordtype}{double}\ D);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//EVALUATIONS\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,54 @@
+\doxysection{collision.\+hpp}
+\hypertarget{collision_8hpp_source}{}\label{collision_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COLLISION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COLLISION\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}matrix.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}discretization.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_collision_a1c247612eae832108bf79b78127f35f3}{Collision}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_collision_a1c247612eae832108bf79b78127f35f3}{Collision}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_collision_ad7d898f36b440945e1a6e6c33570ea13}{λ\_star}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_collision_aef2aea96e0643eb433449af5b223513b}{distribution\_update}}(\mbox{\hyperlink{class_matrix}{Matrix}}\ \&F,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_matrix}{Matrix}}\ \&φ,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *ρ\_np1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_discretization}{Discretization}}\ \&δ,\ \textcolor{keywordtype}{double}\ σ,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ eta,\ \textcolor{keywordtype}{double}\ ε)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_collision_a9a6ff59d63efcf8a914ec221cb4d31c6}{\string~Collision}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_collision_a5ea796e0ab6ac385ebbface1aebb8157}{name}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_b_g_k_ad74e7673468843c8a5d796e3c8225db4}{BGK}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_collision_a1c247612eae832108bf79b78127f35f3}{Collision}}\ \{}
+\DoxyCodeLine{00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_b_g_k_ad74e7673468843c8a5d796e3c8225db4}{BGK}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_b_g_k_ac966f990015fc487f8516b288a67cfa8}{λ\_star}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ -\/1.;\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ std::string\ \mbox{\hyperlink{class_b_g_k_aa1502fb4b2a6e0e6f7a11c8944efb14e}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}BGK"{}};\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_b_g_k_accf135b7654b4d0f83faf43c5175294d}{distribution\_update}}(\mbox{\hyperlink{class_matrix}{Matrix}}\ \&F,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_matrix}{Matrix}}\ \&φ,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *ρ\_np1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_discretization}{Discretization}}\ \&δ,\ \textcolor{keywordtype}{double}\ σ,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ eta,\ \textcolor{keywordtype}{double}\ ε)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00066\ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{class\ }FockerPlank\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_collision_a1c247612eae832108bf79b78127f35f3}{Collision}}\ \{}
+\DoxyCodeLine{00073\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00074\ \ \ \ \ FockerPlank()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_focker_plank_a1ec51c446ab7e79b4bdb9d7d7acf73fb}{λ\_star}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ -\/2.;\ \}}
+\DoxyCodeLine{00077\ \ \ \ \ std::string\ \mbox{\hyperlink{class_focker_plank_aa384f90c7205fdba7072a46988179442}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}FockerPlank"{}};\ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_focker_plank_a851ff3d3918fb8b4f3ba0fc4e1f1d96b}{distribution\_update}}(\mbox{\hyperlink{class_matrix}{Matrix}}\ \&F,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_matrix}{Matrix}}\ \&φ,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *ρ\_np1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_discretization}{Discretization}}\ \&δ,\ \textcolor{keywordtype}{double}\ σ,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ eta,\ \textcolor{keywordtype}{double}\ ε)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COLLISION\_H}}
+
+\end{DoxyCode}
