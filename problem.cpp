@@ -20,7 +20,7 @@ double compute_D(double λ, double σ, double eta, double ε, double dt, double 
 }
 
 
-// -------- CONSTRUCTOR --------
+// constructor
 Problem::Problem(double σ, double eta, double ε, const Discretization &δ, std::unique_ptr<Collision> collision,
                  const std::function<double(double, double)> &f0,
                  const std::function<double(double)> &ρ0) : σ_(σ), eta_(eta), ε_(ε), δ_(δ), f0(f0), ρ0(ρ0) {
@@ -30,6 +30,8 @@ Problem::Problem(double σ, double eta, double ε, const Discretization &δ, std
     D_ = compute_D(collision_->λ_star(), σ_, eta_, ε_, δ_.dt, A_, C_);
 }
 
+
+// Exports problem data into a json file
 void Problem::export_json(const std::string &json_name) const {
 
     // build json
@@ -61,7 +63,7 @@ void Problem::density_update(double *ρ_np1, const double *ρ_n, const double *�
     }
 }
 
-
+// Computes distributions F_n+1
 void Problem::time_step(Matrix &F, double *ρ_np1, double *Φ, Matrix &φ, const double *ρ_n) const {
     // compute flux :
     micro_macro_flux(φ, Φ, F, ρ_n, δ_, A_, C_, D_);
@@ -73,7 +75,7 @@ void Problem::time_step(Matrix &F, double *ρ_np1, double *Φ, Matrix &φ, const
     collision_->distribution_update(F, φ, ρ_np1, δ_, σ_, eta_, ε_);
 }
 
-
+// Solves the diffusion / transport problem with UGKS
 Matrix Problem::solve() const {
     const Discretization &δ = δ_; // Simple reference for easier reading
     // Dynamic allocation

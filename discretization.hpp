@@ -8,9 +8,8 @@
 using json = nlohmann::json; // for easy json handle
 
 
-// [TO DO]: delete normV2 because I think we no longer need it
-
 /**
+ * @struct Discretization
  * @brief Gather information about time, space and velocity discretizations
  */
 struct Discretization {
@@ -25,7 +24,7 @@ struct Discretization {
     double *X; ///< nodes of the spacial discretization
 
     /**
-     * @brief Build and store the velocities and space domain + the time step
+     * @brief Constructor : builds and stores the velocities and space domain + the time step
      *
      * @param dt ∆t
      * @param Tf final time of resolution
@@ -37,11 +36,14 @@ struct Discretization {
      */
     inline Discretization(double dt, double Tf, int N, double v_max, double L, int Nx);
 
+    /** @brief Exports discretization parameters into a json instance that'll be saved into a json file */
     inline json to_json() const;
 
+    /** @brief Destructors: deletes the velocity and space arrays (dynamically allocated) */
     inline ~Discretization();
 };
 
+// Struct constructor
 Discretization::Discretization(double dt, double Tf, int N, double v_max, double L,
                                int Nx) : dt(dt), N(N), L(L), Nx(Nx) {
     // Time discretization
@@ -71,6 +73,7 @@ Discretization::Discretization(double dt, double Tf, int N, double v_max, double
     for (int i = 0; i < Nx + 1; ++i) { X[i] = dx * i; }
 }
 
+// Exports discretization parameters into a json instance that'll be saved into a json file
 json Discretization::to_json() const {
     json j;
     j["dt"] = dt;
@@ -88,7 +91,7 @@ json Discretization::to_json() const {
     return j;
 }
 
-/** @brief Delete the velocity and space arrays (dynamically allocated) */
+// Destructor: deletes the velocity and space arrays (dynamically allocated) */
 Discretization::~Discretization() {
     delete[] V;
     delete[] X;

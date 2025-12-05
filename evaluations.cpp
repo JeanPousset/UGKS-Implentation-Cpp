@@ -1,12 +1,5 @@
 #include "evaluations.hpp"
-#include <cmath>
 
-
-// (?2) : Is it ok to use the class as parameter or it creates too
-// much indirect accesses and it'd be better to use direct values as parameters
-
-
-// [TO DO] : Formulate this into a mat / vector product to speed up (using Blas) -> adapt other function in consequences
 // J_i^(-,n)
 double J_i_m(const double *V, const double *F_n_i, int N) {
     double res = 0.0;
@@ -16,7 +9,7 @@ double J_i_m(const double *V, const double *F_n_i, int N) {
     return res / (2 * N);
 }
 
-// J_i^(-,+)
+// J_i^(+,n)
 double J_i_p(const double *V, const double *F_n_i, int N) {
     double res = 0.0;
     for (int j = N + 1; j < 2 * N; ++j) {
@@ -25,6 +18,7 @@ double J_i_p(const double *V, const double *F_n_i, int N) {
     return res / (2 * N);
 }
 
+// ρ_i^(-,n)
 double ρ_i_m(const double *F_n_i, int N) {
     double res = 0.0;
     for (int j = 0; j < N; ++j) {
@@ -33,7 +27,7 @@ double ρ_i_m(const double *F_n_i, int N) {
     return res / (2. * N);
 }
 
-// J_i^(-,+)
+// ρ_i^(+,n)
 double ρ_i_p(const double *F_n_i, int N) {
     double res = 0.0;
     for (int j = N + 1; j < 2 * N; ++j) {
@@ -44,37 +38,6 @@ double ρ_i_p(const double *F_n_i, int N) {
 
 // --------------------- Interface evaluations ---------------------//
 
-// [OLD] Evaluate microscopic interface values Φ_i+1/2,j for (i,j) in [1,Nx]x[1:2N]
-// (?4) : Should param φ be a reference ?
-// void microscopic_flux(Matrix &φ, const Matrix &F, const double *ρ, double A, double C, double D,
-//                       const Discretization &δ) {
-//     const int N = δ.N;
-//     double v = 0;
-//     for (int i = 0; i < δ.Nx; ++i) {
-//         // case where v < 0 (take F^n_(i+1,j) instead of F^n(i,j))
-//         for (int j = 0; j < N; ++j) {
-//             v = δ.V[j];
-//             φ[i][j] = A * F[i + 1][j] * v + C * (ρ_i_p(F[i], N) + ρ_i_m(F[i + 1], N)) * v + D * v * v * (
-//                           ρ[i + 1] - ρ[i]) / δ.dx;
-//         }
-//         // case where v > 0 (take F^n_(i,j) instead of F^n(i+1,j))
-//         for (int j = N; j < 2 * N; ++j) {
-//             v = δ.V[j];
-//             φ[i][j] = A * F[i][j] * v + C * (ρ_i_p(F[i], N) + ρ_i_m(F[i + 1], N)) * v + D * v * v * (
-//                           ρ[i + 1] - ρ[i]) / δ.dx;
-//         }
-//     }
-// }
-
-// [OLD] Evaluate macroscopic interface values Φ_i+1/2 for i in [1:Nx]
-// void macroscopic_flux(double *Φ, const double *V, const Matrix &F_n, const double *ρ_n, const Problem &pb,
-//                       const Discretization &δ) {
-//     const int N = δ.N;
-//     for (int i = 0; i < δ.Nx; ++i) {
-//         Φ[i] = A(pb, δ.dt) * (J_i_m(V, F_n[i], N) + J_i_p(V, F_n[i], N)) + D(pb, δ.dt) * (ρ_n[i + 1] - ρ_n[i]) *
-//                δ.normV2 / (2 * N * δ.dx);
-//     }
-// }
 
 
 // Evaluate microscopic and macroscopic (avg) interface values φ_i+1/2,j for (i,j) in [1,Nx]x[1:2N] and Φ_i+1/2 for  i in [1,Nx]
@@ -101,6 +64,6 @@ void micro_macro_flux(Matrix &φ, double *Φ, const Matrix &F, const double *ρ,
             Φ[i] += φ[i][j];
         }
 
-        Φ[i] = Φ[i] / (2 * N); // divide at the end to get the average
+        Φ[i] /= 2 * N; // divide at the end to get the average
     }
 }

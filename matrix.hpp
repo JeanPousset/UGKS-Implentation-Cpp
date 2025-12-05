@@ -3,7 +3,10 @@
 #include <stdexcept>
 #include <string>
 
-
+/**
+ * @class Matrix
+ * @brief hand-made (row major) matrix class that stores a double matrix in a dynamic flat double array
+ */
 class Matrix {
 private:
     int rows; ///< number of rows
@@ -21,14 +24,14 @@ public:
 
     /**
      * @brief copy constructor
-     * @param mat
+     * @param[in] mat matrix to copy
      */
     Matrix(const Matrix &mat);
 
     /**
      * @brief move constructor
      * @note used when returning a matrix
-     * @param mat
+     * @param mat matrix to move
      */
     Matrix(Matrix &&mat) noexcept;
 
@@ -43,6 +46,7 @@ public:
     /**
      * @brief Access operator if we  want to update an element of the matrix
      * @note made it "inline" for performance purpose
+     * @param i row index
      */
     double *operator[](int i) {
         if (i < 0 || i >= rows) {
@@ -54,6 +58,7 @@ public:
     /**
      * @brief Access operator if we only want to read an element of the matrix
      * @note made it "inline" for performance purpose
+     * @param[in] i row index
      */
     const double *operator[](int i) const {
         if (i < 0 || i >= rows) {
@@ -64,7 +69,7 @@ public:
 
     /**
      * @brief Copy assignment for a matrix
-     * @param mat right member of the equal
+     * @param[in] mat right member of the equal
      * @return a deep copy of the right member (matrix)
      */
     Matrix &operator=(const Matrix &mat);
@@ -94,12 +99,11 @@ public:
 
     /**
      * @brief Write matrix data in a CSV file
-     * @param filename name of the CSV file
-     * @param delimiter by default : ','. Can also be ';' ' ' '\\t' '`' or ':'
-     * @param precision default (0) set maximum precision so that no information is lost
+     * @param[in] filename name of the CSV file
+     * @param[in] delimiter by default : ','. Can also be ';' ' ' '\\t' '`' or ':'
+     * @param[in] precision default (0) set maximum precision so that no information is lost
      */
     void exportToCSV(const std::string &filename, char delimiter = ',', int precision = 0) const;
-
 
 };
 

@@ -5,10 +5,10 @@
 #include "discretization.hpp"
 
 
-/// @brief return the value of J_i^(-,n)
+/** @brief return the value of J_i^(-,n) */
 double J_i_m(const double *V, const double *F_n_i, int N);
 
-/// @brief return the value of J_i^(+,n)
+/** @brief return the value of J_i^(+,n) */
 double J_i_p(const double *V, const double *F_n_i, int N);
 
 /**

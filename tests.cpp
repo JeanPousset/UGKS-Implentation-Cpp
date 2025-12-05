@@ -3,6 +3,7 @@
 #include <cmath>
 #include <utility> // for move constructor / assignment tests
 
+// Lunches the basic transport problem given in the article
 void transport_test(const std::string &csv_path, const std::string &json_path) {
     // Discretization
     constexpr double dt = 1e-5, Tf = 0.1;
@@ -29,6 +30,7 @@ void transport_test(const std::string &csv_path, const std::string &json_path) {
     pb.export_json(json_path);
 }
 
+// Lunches a basic diffusion problem with ρ0 = 2 + cos(2πx)
 void diffusion_test(const std::string &csv_path, const std::string &json_path) {
     // Discretization
     constexpr double dt = 1e-5, Tf = 0.1;
