@@ -1,0 +1,54 @@
+\doxysection{collision.\+hpp}
+\hypertarget{collision_8hpp_source}{}\label{collision_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ COLLISION\_H}}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ COLLISION\_H}}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}matrix.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}discretization.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00019}\mbox{\hyperlink{class_collision}{00019}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_collision_a1c247612eae832108bf79b78127f35f3}{Collision}}\ \{}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00020}00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00022}\mbox{\hyperlink{class_collision_a1c247612eae832108bf79b78127f35f3}{00022}}\ \ \ \ \ \mbox{\hyperlink{class_collision_a1c247612eae832108bf79b78127f35f3}{Collision}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00025}\mbox{\hyperlink{class_collision_ad7d898f36b440945e1a6e6c33570ea13}{00025}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_collision_ad7d898f36b440945e1a6e6c33570ea13}{λ\_star}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00038}\mbox{\hyperlink{class_collision_aef2aea96e0643eb433449af5b223513b}{00038}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_collision_aef2aea96e0643eb433449af5b223513b}{distribution\_update}}(\mbox{\hyperlink{class_matrix}{Matrix}}\ \&F,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_matrix}{Matrix}}\ \&φ,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *ρ\_np1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_discretization}{Discretization}}\ \&δ,\ \textcolor{keywordtype}{double}\ σ,}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ eta,\ \textcolor{keywordtype}{double}\ ε)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00042}\mbox{\hyperlink{class_collision_a9a6ff59d63efcf8a914ec221cb4d31c6}{00042}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_collision_a9a6ff59d63efcf8a914ec221cb4d31c6}{\string~Collision}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00045}\mbox{\hyperlink{class_collision_a5ea796e0ab6ac385ebbface1aebb8157}{00045}}\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_collision_a5ea796e0ab6ac385ebbface1aebb8157}{name}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00046}00046\ \};}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00052}\mbox{\hyperlink{class_b_g_k}{00052}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_b_g_k_ad74e7673468843c8a5d796e3c8225db4}{BGK}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_collision_a1c247612eae832108bf79b78127f35f3}{Collision}}\ \{}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00053}00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00055}\mbox{\hyperlink{class_b_g_k_ad74e7673468843c8a5d796e3c8225db4}{00055}}\ \ \ \ \ \mbox{\hyperlink{class_b_g_k_ad74e7673468843c8a5d796e3c8225db4}{BGK}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00058}\mbox{\hyperlink{class_b_g_k_ac966f990015fc487f8516b288a67cfa8}{00058}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_b_g_k_ac966f990015fc487f8516b288a67cfa8}{λ\_star}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ -\/1.;\ \}}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00061}\mbox{\hyperlink{class_b_g_k_aa1502fb4b2a6e0e6f7a11c8944efb14e}{00061}}\ \ \ \ \ std::string\ \mbox{\hyperlink{class_b_g_k_aa1502fb4b2a6e0e6f7a11c8944efb14e}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}BGK"{}};\ \}}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_b_g_k_accf135b7654b4d0f83faf43c5175294d}{distribution\_update}}(\mbox{\hyperlink{class_matrix}{Matrix}}\ \&F,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_matrix}{Matrix}}\ \&φ,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *ρ\_np1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_discretization}{Discretization}}\ \&δ,\ \textcolor{keywordtype}{double}\ σ,}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ eta,\ \textcolor{keywordtype}{double}\ ε)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00066}00066\ \};}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00072}\mbox{\hyperlink{class_focker_plank}{00072}}\ \textcolor{keyword}{class\ }FockerPlank\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_collision_a1c247612eae832108bf79b78127f35f3}{Collision}}\ \{}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00073}00073\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00074}00074\ \ \ \ \ FockerPlank()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00076}\mbox{\hyperlink{class_focker_plank_a1ec51c446ab7e79b4bdb9d7d7acf73fb}{00076}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_focker_plank_a1ec51c446ab7e79b4bdb9d7d7acf73fb}{λ\_star}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ -\/2.;\ \}}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00077}\mbox{\hyperlink{class_focker_plank_aa384f90c7205fdba7072a46988179442}{00077}}\ \ \ \ \ std::string\ \mbox{\hyperlink{class_focker_plank_aa384f90c7205fdba7072a46988179442}{name}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}FockerPlank"{}};\ \}}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_focker_plank_a851ff3d3918fb8b4f3ba0fc4e1f1d96b}{distribution\_update}}(\mbox{\hyperlink{class_matrix}{Matrix}}\ \&F,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_matrix}{Matrix}}\ \&φ,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *ρ\_np1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_discretization}{Discretization}}\ \&δ,\ \textcolor{keywordtype}{double}\ σ,}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ eta,\ \textcolor{keywordtype}{double}\ ε)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00081}00081\ \};}
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{collision_8hpp_source_l00083}00083\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COLLISION\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,134 @@
+\doxysection{Focker\+Plank Class Reference}
+\hypertarget{class_focker_plank}{}\label{class_focker_plank}\index{FockerPlank@{FockerPlank}}
+
+
+{\ttfamily \#include $<$collision.\+hpp$>$}
+
+
+
+Inheritance diagram for Focker\+Plank\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_focker_plank__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Focker\+Plank\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_focker_plank__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_focker_plank_a1ec51c446ab7e79b4bdb9d7d7acf73fb}{λ\+\_\+star}} () const override
+\begin{DoxyCompactList}\small\item\em getter for star operator eigenvalue \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_focker_plank_aa384f90c7205fdba7072a46988179442}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Return the name of the derived class (useful for JSON problem export). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_focker_plank_a851ff3d3918fb8b4f3ba0fc4e1f1d96b}{distribution\+\_\+update}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&F, const \mbox{\hyperlink{class_matrix}{Matrix}} \&φ, const double \texorpdfstring{$\ast$}{*}ρ\+\_\+np1, const \mbox{\hyperlink{struct_discretization}{Discretization}} \&δ, double σ, double eta, double ε) const override
+\begin{DoxyCompactList}\small\item\em Compute distribution at time n+1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_collision}{Collision}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Collision} ()=default
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Collision} ()=default
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyWarning}{Warning}
+\mbox{[}TO DO !\mbox{]} 
+\end{DoxyWarning}
+
+
+Definition at line \mbox{\hyperlink{collision_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{collision_8hpp_source}{collision.\+hpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_focker_plank_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_focker_plank_a1ec51c446ab7e79b4bdb9d7d7acf73fb}\index{FockerPlank@{FockerPlank}!λ\_star@{λ\_star}}
+\index{λ\_star@{λ\_star}!FockerPlank@{FockerPlank}}
+\doxysubsubsection{\texorpdfstring{λ\_star()}{λ\_star()}}
+{\footnotesize\ttfamily \label{class_focker_plank_a1ec51c446ab7e79b4bdb9d7d7acf73fb} 
+double Focker\+Plank\+::λ\+\_\+star (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+getter for star operator eigenvalue 
+
+
+
+Implements \mbox{\hyperlink{class_collision_ad7d898f36b440945e1a6e6c33570ea13}{Collision}}.
+
+
+
+Definition at line \mbox{\hyperlink{collision_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{collision_8hpp_source}{collision.\+hpp}}.
+
+\Hypertarget{class_focker_plank_a851ff3d3918fb8b4f3ba0fc4e1f1d96b}\index{FockerPlank@{FockerPlank}!distribution\_update@{distribution\_update}}
+\index{distribution\_update@{distribution\_update}!FockerPlank@{FockerPlank}}
+\doxysubsubsection{\texorpdfstring{distribution\_update()}{distribution\_update()}}
+{\footnotesize\ttfamily \label{class_focker_plank_a851ff3d3918fb8b4f3ba0fc4e1f1d96b} 
+void Focker\+Plank\+::distribution\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{F}{, }\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{φ}{, }\item[{const double \texorpdfstring{$\ast$}{*}}]{ρ\+\_\+np1}{, }\item[{const \mbox{\hyperlink{struct_discretization}{Discretization}} \&}]{δ}{, }\item[{double}]{σ}{, }\item[{double}]{eta}{, }\item[{double}]{ε}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute distribution at time n+1. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em F} & distribution F\+\_\+n to be updated into F\+\_\+n+1 \\
+\hline
+\mbox{\texttt{in}}  & {\em φ} & microscopic fluxes \\
+\hline
+\mbox{\texttt{in}}  & {\em ρ\+\_\+np1} & densities at time n+1 \\
+\hline
+\mbox{\texttt{in}}  & {\em δ} & discretization \\
+\hline
+\mbox{\texttt{in}}  & {\em σ} & collision characteristic frequency \\
+\hline
+\mbox{\texttt{in}}  & {\em eta} & coefficient in front of df/dt \\
+\hline
+\mbox{\texttt{in}}  & {\em ε} & diffusion behaviour coefficient (normalized mean free path) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_collision_aef2aea96e0643eb433449af5b223513b}{Collision}}.
+
+
+
+Definition at line \mbox{\hyperlink{collision_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{collision_8cpp_source}{collision.\+cpp}}.
+
+\Hypertarget{class_focker_plank_aa384f90c7205fdba7072a46988179442}\index{FockerPlank@{FockerPlank}!name@{name}}
+\index{name@{name}!FockerPlank@{FockerPlank}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_focker_plank_aa384f90c7205fdba7072a46988179442} 
+std\+::string Focker\+Plank\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the name of the derived class (useful for JSON problem export). 
+
+
+
+Implements \mbox{\hyperlink{class_collision_a5ea796e0ab6ac385ebbface1aebb8157}{Collision}}.
+
+
+
+Definition at line \mbox{\hyperlink{collision_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{collision_8hpp_source}{collision.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+collision.\+hpp\item 
+collision.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,267 @@
+\doxysection{Discretization Struct Reference}
+\hypertarget{struct_discretization}{}\label{struct_discretization}\index{Discretization@{Discretization}}
+
+
+Gather information about time, space and velocity discretizations.  
+
+
+
+
+{\ttfamily \#include $<$discretization.\+hpp$>$}
+
+
+
+Collaboration diagram for Discretization\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{struct_discretization__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_discretization_ae3ab80b6d45b13e36b115a18055ac3a7}{Discretization}} (double \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}}, double Tf, int \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}}, double v\+\_\+max, double \mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}}, int \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}})
+\begin{DoxyCompactList}\small\item\em Constructor \+: builds and stores the velocities and space domain + the time step. \end{DoxyCompactList}\item 
+json \mbox{\hyperlink{struct_discretization_a9ad362be81d7bc4cfc54aa0cec41b292}{to\+\_\+json}} () const
+\begin{DoxyCompactList}\small\item\em Exports discretization parameters into a json instance that\textquotesingle{}ll be saved into a json file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_discretization_a8bbbf5f4df316458f6eca4b3e090a3db}{\texorpdfstring{$\sim$}{\string~}\+Discretization}} ()
+\begin{DoxyCompactList}\small\item\em Destructors\+: deletes the velocity and space arrays (dynamically allocated). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}}
+\begin{DoxyCompactList}\small\item\em time step. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_discretization_abc7bf514d6f42883974f6bd924c40d3b}{Nt}}
+\begin{DoxyCompactList}\small\item\em number of time step \end{DoxyCompactList}\item 
+double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}}
+\begin{DoxyCompactList}\small\item\em array of discrete velocities. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}}
+\begin{DoxyCompactList}\small\item\em half of discretization points number for the velocity domain \mbox{[}-\/v\+\_\+max,+v\+\_\+max\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_discretization_a8704c5f82a8eb03ec735c16e8e7ec742}{norm\+V2}}
+\begin{DoxyCompactList}\small\item\em square of V\textquotesingle{}s euclidian norm. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}}
+\begin{DoxyCompactList}\small\item\em length of the space domain. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}}
+\begin{DoxyCompactList}\small\item\em number of cells \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_discretization_af881ef9e25d682d557870c1d6e054589}{dx}}
+\begin{DoxyCompactList}\small\item\em ∆x. \end{DoxyCompactList}\item 
+double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd}{X}}
+\begin{DoxyCompactList}\small\item\em nodes of the spacial discretization \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gather information about time, space and velocity discretizations. 
+
+Definition at line \mbox{\hyperlink{discretization_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{discretization_8hpp_source}{discretization.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{struct_discretization_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_discretization_ae3ab80b6d45b13e36b115a18055ac3a7}\index{Discretization@{Discretization}!Discretization@{Discretization}}
+\index{Discretization@{Discretization}!Discretization@{Discretization}}
+\doxysubsubsection{\texorpdfstring{Discretization()}{Discretization()}}
+{\footnotesize\ttfamily \label{struct_discretization_ae3ab80b6d45b13e36b115a18055ac3a7} 
+Discretization\+::\+Discretization (\begin{DoxyParamCaption}\item[{double}]{dt}{, }\item[{double}]{Tf}{, }\item[{int}]{N}{, }\item[{double}]{v\+\_\+max}{, }\item[{double}]{L}{, }\item[{int}]{Nx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor \+: builds and stores the velocities and space domain + the time step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & ∆t \\
+\hline
+{\em Tf} & final time of resolution \\
+\hline
+{\em N} & ∆x \\
+\hline
+{\em v\+\_\+max} & maximum values of velocity (upper and -\/lower bound of the velocity domain) \\
+\hline
+{\em L} & Length of the space domain \mbox{[}0,1\mbox{]} \\
+\hline
+{\em Nx} & number of cells \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+here the number of space node is Nx+1 ! 
+\end{DoxyWarning}
+
+
+Definition at line \mbox{\hyperlink{discretization_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{discretization_8hpp_source}{discretization.\+hpp}}.
+
+\Hypertarget{struct_discretization_a8bbbf5f4df316458f6eca4b3e090a3db}\index{Discretization@{Discretization}!````~Discretization@{\texorpdfstring{$\sim$}{\string~}Discretization}}
+\index{````~Discretization@{\texorpdfstring{$\sim$}{\string~}Discretization}!Discretization@{Discretization}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Discretization()}{\string~Discretization()}}
+{\footnotesize\ttfamily \label{struct_discretization_a8bbbf5f4df316458f6eca4b3e090a3db} 
+Discretization\+::\texorpdfstring{$\sim$}{\string~}\+Discretization (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructors\+: deletes the velocity and space arrays (dynamically allocated). 
+
+
+
+Definition at line \mbox{\hyperlink{discretization_8hpp_source_l00095}{95}} of file \mbox{\hyperlink{discretization_8hpp_source}{discretization.\+hpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{struct_discretization_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_discretization_a9ad362be81d7bc4cfc54aa0cec41b292}\index{Discretization@{Discretization}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!Discretization@{Discretization}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}}
+{\footnotesize\ttfamily \label{struct_discretization_a9ad362be81d7bc4cfc54aa0cec41b292} 
+json Discretization\+::to\+\_\+json (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Exports discretization parameters into a json instance that\textquotesingle{}ll be saved into a json file. 
+
+
+
+Definition at line \mbox{\hyperlink{discretization_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{discretization_8hpp_source}{discretization.\+hpp}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_discretization_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_discretization_ac57a13831e28205af7eaf71436082466}\index{Discretization@{Discretization}!dt@{dt}}
+\index{dt@{dt}!Discretization@{Discretization}}
+\doxysubsubsection{\texorpdfstring{dt}{dt}}
+{\footnotesize\ttfamily \label{struct_discretization_ac57a13831e28205af7eaf71436082466} 
+double Discretization\+::dt}
+
+
+
+time step. 
+
+
+
+Definition at line \mbox{\hyperlink{discretization_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{discretization_8hpp_source}{discretization.\+hpp}}.
+
+\Hypertarget{struct_discretization_af881ef9e25d682d557870c1d6e054589}\index{Discretization@{Discretization}!dx@{dx}}
+\index{dx@{dx}!Discretization@{Discretization}}
+\doxysubsubsection{\texorpdfstring{dx}{dx}}
+{\footnotesize\ttfamily \label{struct_discretization_af881ef9e25d682d557870c1d6e054589} 
+double Discretization\+::dx}
+
+
+
+∆x. 
+
+
+
+Definition at line \mbox{\hyperlink{discretization_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{discretization_8hpp_source}{discretization.\+hpp}}.
+
+\Hypertarget{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}\index{Discretization@{Discretization}!L@{L}}
+\index{L@{L}!Discretization@{Discretization}}
+\doxysubsubsection{\texorpdfstring{L}{L}}
+{\footnotesize\ttfamily \label{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684} 
+double Discretization\+::L}
+
+
+
+length of the space domain. 
+
+
+
+Definition at line \mbox{\hyperlink{discretization_8hpp_source_l00021}{21}} of file \mbox{\hyperlink{discretization_8hpp_source}{discretization.\+hpp}}.
+
+\Hypertarget{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}\index{Discretization@{Discretization}!N@{N}}
+\index{N@{N}!Discretization@{Discretization}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \label{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c} 
+int Discretization\+::N}
+
+
+
+half of discretization points number for the velocity domain \mbox{[}-\/v\+\_\+max,+v\+\_\+max\mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{discretization_8hpp_source_l00019}{19}} of file \mbox{\hyperlink{discretization_8hpp_source}{discretization.\+hpp}}.
+
+\Hypertarget{struct_discretization_a8704c5f82a8eb03ec735c16e8e7ec742}\index{Discretization@{Discretization}!normV2@{normV2}}
+\index{normV2@{normV2}!Discretization@{Discretization}}
+\doxysubsubsection{\texorpdfstring{normV2}{normV2}}
+{\footnotesize\ttfamily \label{struct_discretization_a8704c5f82a8eb03ec735c16e8e7ec742} 
+double Discretization\+::norm\+V2}
+
+
+
+square of V\textquotesingle{}s euclidian norm. 
+
+
+
+Definition at line \mbox{\hyperlink{discretization_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{discretization_8hpp_source}{discretization.\+hpp}}.
+
+\Hypertarget{struct_discretization_abc7bf514d6f42883974f6bd924c40d3b}\index{Discretization@{Discretization}!Nt@{Nt}}
+\index{Nt@{Nt}!Discretization@{Discretization}}
+\doxysubsubsection{\texorpdfstring{Nt}{Nt}}
+{\footnotesize\ttfamily \label{struct_discretization_abc7bf514d6f42883974f6bd924c40d3b} 
+int Discretization\+::\+Nt}
+
+
+
+number of time step 
+
+
+
+Definition at line \mbox{\hyperlink{discretization_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{discretization_8hpp_source}{discretization.\+hpp}}.
+
+\Hypertarget{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}\index{Discretization@{Discretization}!Nx@{Nx}}
+\index{Nx@{Nx}!Discretization@{Discretization}}
+\doxysubsubsection{\texorpdfstring{Nx}{Nx}}
+{\footnotesize\ttfamily \label{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e} 
+int Discretization\+::\+Nx}
+
+
+
+number of cells 
+
+\begin{DoxyWarning}{Warning}
+here the number of space node is Nx+1 ! 
+\end{DoxyWarning}
+
+
+Definition at line \mbox{\hyperlink{discretization_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{discretization_8hpp_source}{discretization.\+hpp}}.
+
+\Hypertarget{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}\index{Discretization@{Discretization}!V@{V}}
+\index{V@{V}!Discretization@{Discretization}}
+\doxysubsubsection{\texorpdfstring{V}{V}}
+{\footnotesize\ttfamily \label{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6} 
+double\texorpdfstring{$\ast$}{*} Discretization\+::V}
+
+
+
+array of discrete velocities. 
+
+
+
+Definition at line \mbox{\hyperlink{discretization_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{discretization_8hpp_source}{discretization.\+hpp}}.
+
+\Hypertarget{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd}\index{Discretization@{Discretization}!X@{X}}
+\index{X@{X}!Discretization@{Discretization}}
+\doxysubsubsection{\texorpdfstring{X}{X}}
+{\footnotesize\ttfamily \label{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd} 
+double\texorpdfstring{$\ast$}{*} Discretization\+::X}
+
+
+
+nodes of the spacial discretization 
+
+
+
+Definition at line \mbox{\hyperlink{discretization_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{discretization_8hpp_source}{discretization.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+discretization.\+hpp\end{DoxyCompactItemize}
