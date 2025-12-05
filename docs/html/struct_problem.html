@@ -96,11 +96,15 @@ $(function(){initNavTree('struct_problem.html','','struct_problem-members'); });
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="problem_8hpp_source.html">problem.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Problem:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="struct_problem__coll__graph.svg" width="131" height="662"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae7b8eb84961b2eede611eb76b64633e9" id="r_ae7b8eb84961b2eede611eb76b64633e9"><td class="memItemLeft" align="right" valign="top"><a id="ae7b8eb84961b2eede611eb76b64633e9" name="ae7b8eb84961b2eede611eb76b64633e9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Problem</b> (double σ, double eta, double ε, const <a class="el" href="struct_discretization.html">Discretization</a> &amp;δ, std::unique_ptr&lt; <a class="el" href="class_collision.html">Collision</a> &gt; collision, const std::function&lt; double(double, double)&gt; &amp;<a class="el" href="#ac5f023d074cb48d93e91f9133297c785">f0</a>, const std::function&lt; double(double)&gt; &amp;<a class="el" href="#acd76bc12b08367f72bb3f03903803e52">ρ0</a>)</td></tr>
+<tr class="memitem:ae7b8eb84961b2eede611eb76b64633e9" id="r_ae7b8eb84961b2eede611eb76b64633e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7b8eb84961b2eede611eb76b64633e9">Problem</a> (double σ, double eta, double ε, const <a class="el" href="struct_discretization.html">Discretization</a> &amp;δ, std::unique_ptr&lt; <a class="el" href="class_collision.html">Collision</a> &gt; collision, const std::function&lt; double(double, double)&gt; &amp;<a class="el" href="#ac5f023d074cb48d93e91f9133297c785">f0</a>, const std::function&lt; double(double)&gt; &amp;<a class="el" href="#acd76bc12b08367f72bb3f03903803e52">ρ0</a>)</td></tr>
 <tr class="memitem:a0fb1a5ec39f0de6a3a73c4adf3087403" id="r_a0fb1a5ec39f0de6a3a73c4adf3087403"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fb1a5ec39f0de6a3a73c4adf3087403">export_json</a> (const std::string &amp;json_name) const</td></tr>
 <tr class="memdesc:a0fb1a5ec39f0de6a3a73c4adf3087403"><td class="mdescLeft">&#160;</td><td class="mdescRight">exports problem data into a json file  <br /></td></tr>
 <tr class="memitem:a5393604f9b013054589d6a77fd9432b5" id="r_a5393604f9b013054589d6a77fd9432b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5393604f9b013054589d6a77fd9432b5">density_update</a> (double *ρ_np1, const double *ρ_n, const double *Φ) const</td></tr>
@@ -112,39 +116,81 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a4ddb15f7ab05ceed31b627a00bd5fc34" id="r_a4ddb15f7ab05ceed31b627a00bd5fc34"><td class="memItemLeft" align="right" valign="top"><a id="a4ddb15f7ab05ceed31b627a00bd5fc34" name="a4ddb15f7ab05ceed31b627a00bd5fc34"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>σ_</b></td></tr>
-<tr class="memdesc:a4ddb15f7ab05ceed31b627a00bd5fc34"><td class="mdescLeft">&#160;</td><td class="mdescRight">collision characteristic frequency <br /></td></tr>
-<tr class="memitem:a02f42710cbee74c61f721e9e05dd4e76" id="r_a02f42710cbee74c61f721e9e05dd4e76"><td class="memItemLeft" align="right" valign="top"><a id="a02f42710cbee74c61f721e9e05dd4e76" name="a02f42710cbee74c61f721e9e05dd4e76"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>eta_</b></td></tr>
-<tr class="memdesc:a02f42710cbee74c61f721e9e05dd4e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">coefficient in front of df/dt <br /></td></tr>
-<tr class="memitem:a0222bc2a3ceed74dbac67335243d8574" id="r_a0222bc2a3ceed74dbac67335243d8574"><td class="memItemLeft" align="right" valign="top"><a id="a0222bc2a3ceed74dbac67335243d8574" name="a0222bc2a3ceed74dbac67335243d8574"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>ε_</b></td></tr>
-<tr class="memdesc:a0222bc2a3ceed74dbac67335243d8574"><td class="mdescLeft">&#160;</td><td class="mdescRight">diffusion behaviour coefficient (normalized mean free path) <br /></td></tr>
-<tr class="memitem:a55ff482518cb6097cad5f1d5021cd5f9" id="r_a55ff482518cb6097cad5f1d5021cd5f9"><td class="memItemLeft" align="right" valign="top"><a id="a55ff482518cb6097cad5f1d5021cd5f9" name="a55ff482518cb6097cad5f1d5021cd5f9"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>A_</b></td></tr>
-<tr class="memdesc:a55ff482518cb6097cad5f1d5021cd5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A(∆t,σ,η,ε) coefficient. <br /></td></tr>
-<tr class="memitem:a9b25da86a8916c19fdbae181ba61bd3e" id="r_a9b25da86a8916c19fdbae181ba61bd3e"><td class="memItemLeft" align="right" valign="top"><a id="a9b25da86a8916c19fdbae181ba61bd3e" name="a9b25da86a8916c19fdbae181ba61bd3e"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>C_</b></td></tr>
-<tr class="memdesc:a9b25da86a8916c19fdbae181ba61bd3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">C(∆t,σ,η,ε) coefficient. <br /></td></tr>
-<tr class="memitem:a58bbccbdcf9d8d2a20fa5f4f0dde806d" id="r_a58bbccbdcf9d8d2a20fa5f4f0dde806d"><td class="memItemLeft" align="right" valign="top"><a id="a58bbccbdcf9d8d2a20fa5f4f0dde806d" name="a58bbccbdcf9d8d2a20fa5f4f0dde806d"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>D_</b></td></tr>
-<tr class="memdesc:a58bbccbdcf9d8d2a20fa5f4f0dde806d"><td class="mdescLeft">&#160;</td><td class="mdescRight">D(∆t,σ,η,ε) coefficient. <br /></td></tr>
+<tr class="memitem:a4ddb15f7ab05ceed31b627a00bd5fc34" id="r_a4ddb15f7ab05ceed31b627a00bd5fc34"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ddb15f7ab05ceed31b627a00bd5fc34">σ_</a></td></tr>
+<tr class="memdesc:a4ddb15f7ab05ceed31b627a00bd5fc34"><td class="mdescLeft">&#160;</td><td class="mdescRight">collision characteristic frequency  <br /></td></tr>
+<tr class="memitem:a02f42710cbee74c61f721e9e05dd4e76" id="r_a02f42710cbee74c61f721e9e05dd4e76"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02f42710cbee74c61f721e9e05dd4e76">eta_</a></td></tr>
+<tr class="memdesc:a02f42710cbee74c61f721e9e05dd4e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">coefficient in front of df/dt  <br /></td></tr>
+<tr class="memitem:a0222bc2a3ceed74dbac67335243d8574" id="r_a0222bc2a3ceed74dbac67335243d8574"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0222bc2a3ceed74dbac67335243d8574">ε_</a></td></tr>
+<tr class="memdesc:a0222bc2a3ceed74dbac67335243d8574"><td class="mdescLeft">&#160;</td><td class="mdescRight">diffusion behaviour coefficient (normalized mean free path)  <br /></td></tr>
+<tr class="memitem:a55ff482518cb6097cad5f1d5021cd5f9" id="r_a55ff482518cb6097cad5f1d5021cd5f9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55ff482518cb6097cad5f1d5021cd5f9">A_</a></td></tr>
+<tr class="memdesc:a55ff482518cb6097cad5f1d5021cd5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A(∆t,σ,η,ε) coefficient.  <br /></td></tr>
+<tr class="memitem:a9b25da86a8916c19fdbae181ba61bd3e" id="r_a9b25da86a8916c19fdbae181ba61bd3e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b25da86a8916c19fdbae181ba61bd3e">C_</a></td></tr>
+<tr class="memdesc:a9b25da86a8916c19fdbae181ba61bd3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">C(∆t,σ,η,ε) coefficient.  <br /></td></tr>
+<tr class="memitem:a58bbccbdcf9d8d2a20fa5f4f0dde806d" id="r_a58bbccbdcf9d8d2a20fa5f4f0dde806d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58bbccbdcf9d8d2a20fa5f4f0dde806d">D_</a></td></tr>
+<tr class="memdesc:a58bbccbdcf9d8d2a20fa5f4f0dde806d"><td class="mdescLeft">&#160;</td><td class="mdescRight">D(∆t,σ,η,ε) coefficient.  <br /></td></tr>
 <tr class="memitem:ae2208161f11ea1856a628ea618f5d117" id="r_ae2208161f11ea1856a628ea618f5d117"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_discretization.html">Discretization</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2208161f11ea1856a628ea618f5d117">δ_</a></td></tr>
-<tr class="memitem:a14593c477ebb610e3f2bb79d8ccffdfa" id="r_a14593c477ebb610e3f2bb79d8ccffdfa"><td class="memItemLeft" align="right" valign="top"><a id="a14593c477ebb610e3f2bb79d8ccffdfa" name="a14593c477ebb610e3f2bb79d8ccffdfa"></a>
-std::unique_ptr&lt; <a class="el" href="class_collision.html">Collision</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>collision_</b></td></tr>
-<tr class="memdesc:a14593c477ebb610e3f2bb79d8ccffdfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to an instance of a subclass of <a class="el" href="class_collision.html" title="abstract class to handle various collision operators with polymorphism">Collision</a> (polymorphism). <br /></td></tr>
-<tr class="memitem:ac5f023d074cb48d93e91f9133297c785" id="r_ac5f023d074cb48d93e91f9133297c785"><td class="memItemLeft" align="right" valign="top"><a id="ac5f023d074cb48d93e91f9133297c785" name="ac5f023d074cb48d93e91f9133297c785"></a>
-std::function&lt; double(double, double)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>f0</b></td></tr>
-<tr class="memdesc:ac5f023d074cb48d93e91f9133297c785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial distribution. <br /></td></tr>
-<tr class="memitem:acd76bc12b08367f72bb3f03903803e52" id="r_acd76bc12b08367f72bb3f03903803e52"><td class="memItemLeft" align="right" valign="top"><a id="acd76bc12b08367f72bb3f03903803e52" name="acd76bc12b08367f72bb3f03903803e52"></a>
-std::function&lt; double(double)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ρ0</b></td></tr>
-<tr class="memdesc:acd76bc12b08367f72bb3f03903803e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial density. <br /></td></tr>
+<tr class="memitem:a14593c477ebb610e3f2bb79d8ccffdfa" id="r_a14593c477ebb610e3f2bb79d8ccffdfa"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_collision.html">Collision</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14593c477ebb610e3f2bb79d8ccffdfa">collision_</a></td></tr>
+<tr class="memdesc:a14593c477ebb610e3f2bb79d8ccffdfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to an instance of a subclass of <a class="el" href="class_collision.html" title="abstract class to handle various collision operators with polymorphism">Collision</a> (polymorphism).  <br /></td></tr>
+<tr class="memitem:ac5f023d074cb48d93e91f9133297c785" id="r_ac5f023d074cb48d93e91f9133297c785"><td class="memItemLeft" align="right" valign="top">std::function&lt; double(double, double)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5f023d074cb48d93e91f9133297c785">f0</a></td></tr>
+<tr class="memdesc:ac5f023d074cb48d93e91f9133297c785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial distribution.  <br /></td></tr>
+<tr class="memitem:acd76bc12b08367f72bb3f03903803e52" id="r_acd76bc12b08367f72bb3f03903803e52"><td class="memItemLeft" align="right" valign="top">std::function&lt; double(double)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd76bc12b08367f72bb3f03903803e52">ρ0</a></td></tr>
+<tr class="memdesc:acd76bc12b08367f72bb3f03903803e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial density.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Parameters that defines a problem. </p>
 <dl class="section warning"><dt>Warning</dt><dd>function as a member is not optimized and create a cost at each call not a problem for us because problem functions are only called in problem initialization </dd></dl>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+
+<p class="definition">Definition at line <a class="el" href="problem_8hpp_source.html#l00022">22</a> of file <a class="el" href="problem_8hpp_source.html">problem.hpp</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae7b8eb84961b2eede611eb76b64633e9" name="ae7b8eb84961b2eede611eb76b64633e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7b8eb84961b2eede611eb76b64633e9">&#9670;&#160;</a></span>Problem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Problem::Problem </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>σ</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>eta</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ε</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_discretization.html">Discretization</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>δ</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_collision.html">Collision</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; double(double, double)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>f0</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; double(double)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>ρ0</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="problem_8cpp_source.html#l00024">24</a> of file <a class="el" href="problem_8cpp_source.html">problem.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a5393604f9b013054589d6a77fd9432b5" name="a5393604f9b013054589d6a77fd9432b5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5393604f9b013054589d6a77fd9432b5">&#9670;&#160;</a></span>density_update()</h2>
 
@@ -179,6 +225,8 @@ std::function&lt; double(double)&gt;&#160;</td><td class="memItemRight" valign="
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="problem_8cpp_source.html#l00056">56</a> of file <a class="el" href="problem_8cpp_source.html">problem.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a0fb1a5ec39f0de6a3a73c4adf3087403" name="a0fb1a5ec39f0de6a3a73c4adf3087403"></a>
@@ -204,6 +252,8 @@ std::function&lt; double(double)&gt;&#160;</td><td class="memItemRight" valign="
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="problem_8cpp_source.html#l00035">35</a> of file <a class="el" href="problem_8cpp_source.html">problem.cpp</a>.</p>
+
 </div>
 </div>
 <a id="ad87ef395c47129c336a0904707917e7a" name="ad87ef395c47129c336a0904707917e7a"></a>
@@ -224,6 +274,8 @@ std::function&lt; double(double)&gt;&#160;</td><td class="memItemRight" valign="
 <p>Solves the diffusion / transport problem with UGKS. </p>
 <dl class="section return"><dt>Returns</dt><dd>densities values for each time step t_k / space node x_i, (k,i) in [1,Nt]x[1,Nx+1] </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>must be deleted when return</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="problem_8cpp_source.html#l00079">79</a> of file <a class="el" href="problem_8cpp_source.html">problem.cpp</a>.</p>
 
 </div>
 </div>
@@ -273,6 +325,8 @@ std::function&lt; double(double)&gt;&#160;</td><td class="memItemRight" valign="
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="problem_8cpp_source.html#l00067">67</a> of file <a class="el" href="problem_8cpp_source.html">problem.cpp</a>.</p>
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
@@ -289,11 +343,175 @@ std::function&lt; double(double)&gt;&#160;</td><td class="memItemRight" valign="
 </div><div class="memdoc">
 <p>Space, velocity and time discretization information -&gt; reference to not make a copy that will create problem with the dynamic arrays </p>
 
+<p class="definition">Definition at line <a class="el" href="problem_8hpp_source.html#l00031">31</a> of file <a class="el" href="problem_8hpp_source.html">problem.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0222bc2a3ceed74dbac67335243d8574" name="a0222bc2a3ceed74dbac67335243d8574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0222bc2a3ceed74dbac67335243d8574">&#9670;&#160;</a></span>ε_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Problem::ε_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>diffusion behaviour coefficient (normalized mean free path) </p>
+
+<p class="definition">Definition at line <a class="el" href="problem_8hpp_source.html#l00026">26</a> of file <a class="el" href="problem_8hpp_source.html">problem.hpp</a>.</p>
+
+</div>
+</div>
+<a id="acd76bc12b08367f72bb3f03903803e52" name="acd76bc12b08367f72bb3f03903803e52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd76bc12b08367f72bb3f03903803e52">&#9670;&#160;</a></span>ρ0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;double(double)&gt; Problem::ρ0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initial density. </p>
+
+<p class="definition">Definition at line <a class="el" href="problem_8hpp_source.html#l00035">35</a> of file <a class="el" href="problem_8hpp_source.html">problem.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4ddb15f7ab05ceed31b627a00bd5fc34" name="a4ddb15f7ab05ceed31b627a00bd5fc34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ddb15f7ab05ceed31b627a00bd5fc34">&#9670;&#160;</a></span>σ_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Problem::σ_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>collision characteristic frequency </p>
+
+<p class="definition">Definition at line <a class="el" href="problem_8hpp_source.html#l00024">24</a> of file <a class="el" href="problem_8hpp_source.html">problem.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a55ff482518cb6097cad5f1d5021cd5f9" name="a55ff482518cb6097cad5f1d5021cd5f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55ff482518cb6097cad5f1d5021cd5f9">&#9670;&#160;</a></span>A_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Problem::A_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A(∆t,σ,η,ε) coefficient. </p>
+
+<p class="definition">Definition at line <a class="el" href="problem_8hpp_source.html#l00027">27</a> of file <a class="el" href="problem_8hpp_source.html">problem.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9b25da86a8916c19fdbae181ba61bd3e" name="a9b25da86a8916c19fdbae181ba61bd3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b25da86a8916c19fdbae181ba61bd3e">&#9670;&#160;</a></span>C_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Problem::C_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>C(∆t,σ,η,ε) coefficient. </p>
+
+<p class="definition">Definition at line <a class="el" href="problem_8hpp_source.html#l00028">28</a> of file <a class="el" href="problem_8hpp_source.html">problem.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a14593c477ebb610e3f2bb79d8ccffdfa" name="a14593c477ebb610e3f2bb79d8ccffdfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14593c477ebb610e3f2bb79d8ccffdfa">&#9670;&#160;</a></span>collision_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_collision.html">Collision</a>&gt; Problem::collision_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to an instance of a subclass of <a class="el" href="class_collision.html" title="abstract class to handle various collision operators with polymorphism">Collision</a> (polymorphism). </p>
+
+<p class="definition">Definition at line <a class="el" href="problem_8hpp_source.html#l00033">33</a> of file <a class="el" href="problem_8hpp_source.html">problem.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a58bbccbdcf9d8d2a20fa5f4f0dde806d" name="a58bbccbdcf9d8d2a20fa5f4f0dde806d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58bbccbdcf9d8d2a20fa5f4f0dde806d">&#9670;&#160;</a></span>D_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Problem::D_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>D(∆t,σ,η,ε) coefficient. </p>
+
+<p class="definition">Definition at line <a class="el" href="problem_8hpp_source.html#l00029">29</a> of file <a class="el" href="problem_8hpp_source.html">problem.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a02f42710cbee74c61f721e9e05dd4e76" name="a02f42710cbee74c61f721e9e05dd4e76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02f42710cbee74c61f721e9e05dd4e76">&#9670;&#160;</a></span>eta_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Problem::eta_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>coefficient in front of df/dt </p>
+
+<p class="definition">Definition at line <a class="el" href="problem_8hpp_source.html#l00025">25</a> of file <a class="el" href="problem_8hpp_source.html">problem.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac5f023d074cb48d93e91f9133297c785" name="ac5f023d074cb48d93e91f9133297c785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5f023d074cb48d93e91f9133297c785">&#9670;&#160;</a></span>f0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;double(double, double)&gt; Problem::f0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initial distribution. </p>
+
+<p class="definition">Definition at line <a class="el" href="problem_8hpp_source.html#l00034">34</a> of file <a class="el" href="problem_8hpp_source.html">problem.hpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li><a class="el" href="problem_8hpp_source.html">problem.hpp</a></li>
-<li><b>problem.cpp</b></li>
+<li><a class="el" href="problem_8cpp_source.html">problem.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

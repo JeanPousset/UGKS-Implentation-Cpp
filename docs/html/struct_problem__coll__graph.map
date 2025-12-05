@@ -1,0 +1,5 @@
+<map id="Problem" name="Problem">
+<area shape="rect" id="Node000001" title="Parameters that defines a problem." alt="" coords="5,346,125,656"/>
+<area shape="rect" id="Node000002" href="$struct_discretization.html" title="Gather information about time, space and velocity discretizations." alt="" coords="5,5,125,275"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,272,68,329,63,329,65,278"/>
+</map>

@@ -9,21 +9,28 @@ hand-\/made (row major) matrix class that stores a double matrix in a dynamic fl
 
 {\ttfamily \#include $<$matrix.\+hpp$>$}
 
+
+
+Collaboration diagram for Matrix\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{class_matrix__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_matrix_abad6f393be565eda9d946bd3c1c4a8d3}\label{class_matrix_abad6f393be565eda9d946bd3c1c4a8d3} 
-{\bfseries Matrix} (int \mbox{\hyperlink{class_matrix_a7d4293b74029beb92af3d47fdcb7c18c}{n\+\_\+rows}}=0, int \mbox{\hyperlink{class_matrix_a6cb4735dadc364c543bb667468b0fac8}{n\+\_\+cols}}=0)
+\mbox{\hyperlink{class_matrix_abad6f393be565eda9d946bd3c1c4a8d3}{Matrix}} (int \mbox{\hyperlink{class_matrix_a7d4293b74029beb92af3d47fdcb7c18c}{n\+\_\+rows}}=0, int \mbox{\hyperlink{class_matrix_a6cb4735dadc364c543bb667468b0fac8}{n\+\_\+cols}}=0)
 \begin{DoxyCompactList}\small\item\em Initializes a matrix of size (n\+\_\+rows, n\+\_\+cols). \end{DoxyCompactList}\item 
-\Hypertarget{class_matrix_a80be9959061e3bfa4044a75cec9ffe3d}\label{class_matrix_a80be9959061e3bfa4044a75cec9ffe3d} 
-{\bfseries Matrix} (int \mbox{\hyperlink{class_matrix_a7d4293b74029beb92af3d47fdcb7c18c}{n\+\_\+rows}}, int \mbox{\hyperlink{class_matrix_a6cb4735dadc364c543bb667468b0fac8}{n\+\_\+cols}}, double v\+\_\+init)
+\mbox{\hyperlink{class_matrix_a80be9959061e3bfa4044a75cec9ffe3d}{Matrix}} (int \mbox{\hyperlink{class_matrix_a7d4293b74029beb92af3d47fdcb7c18c}{n\+\_\+rows}}, int \mbox{\hyperlink{class_matrix_a6cb4735dadc364c543bb667468b0fac8}{n\+\_\+cols}}, double v\+\_\+init)
 \begin{DoxyCompactList}\small\item\em Initializes a matrix of size (n\+\_\+rows, n\+\_\+cols) filled with v\+\_\+init values. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_matrix_a96c18f748b3df19500bf2f8c837ee5bc}{Matrix}} (const \mbox{\hyperlink{class_matrix}{Matrix}} \&mat)
 \begin{DoxyCompactList}\small\item\em copy constructor \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_matrix_a83398e3d63f69d95d054d27852db2f6b}{Matrix}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&\&mat) noexcept
 \begin{DoxyCompactList}\small\item\em move constructor \end{DoxyCompactList}\item 
-\Hypertarget{class_matrix_a9b1c3627f573d78a2f08623fdfef990f}\label{class_matrix_a9b1c3627f573d78a2f08623fdfef990f} 
-{\bfseries \texorpdfstring{$\sim$}{\string~}\+Matrix} ()
+\mbox{\hyperlink{class_matrix_a9b1c3627f573d78a2f08623fdfef990f}{\texorpdfstring{$\sim$}{\string~}\+Matrix}} ()
 \begin{DoxyCompactList}\small\item\em Destructor for any matrix. \end{DoxyCompactList}\item 
 double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_matrix_a28f3ae2a31b6e879b737317f871f4731}{operator\mbox{[}$\,$\mbox{]}}} (int i)
 \begin{DoxyCompactList}\small\item\em Access operator if we want to update an element of the matrix. \end{DoxyCompactList}\item 
@@ -33,26 +40,55 @@ const double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_matrix_a9d981e975
 \begin{DoxyCompactList}\small\item\em Copy assignment for a matrix. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{class_matrix_a4ecdb2efefd8852302f38a309363352d}{operator=}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&\&mat) noexcept
 \begin{DoxyCompactList}\small\item\em semantic move \end{DoxyCompactList}\item 
-\Hypertarget{class_matrix_a7d4293b74029beb92af3d47fdcb7c18c}\label{class_matrix_a7d4293b74029beb92af3d47fdcb7c18c} 
-int {\bfseries n\+\_\+rows} () const
+int \mbox{\hyperlink{class_matrix_a7d4293b74029beb92af3d47fdcb7c18c}{n\+\_\+rows}} () const
 \begin{DoxyCompactList}\small\item\em Returns number of rows of the matrix. \end{DoxyCompactList}\item 
-\Hypertarget{class_matrix_a6cb4735dadc364c543bb667468b0fac8}\label{class_matrix_a6cb4735dadc364c543bb667468b0fac8} 
-int {\bfseries n\+\_\+cols} () const
+int \mbox{\hyperlink{class_matrix_a6cb4735dadc364c543bb667468b0fac8}{n\+\_\+cols}} () const
 \begin{DoxyCompactList}\small\item\em Returns number of columns of the matrix. \end{DoxyCompactList}\item 
-\Hypertarget{class_matrix_a1f563862671a3de0fb9e06d0491cd6ef}\label{class_matrix_a1f563862671a3de0fb9e06d0491cd6ef} 
-void {\bfseries display} () const
+void \mbox{\hyperlink{class_matrix_a1f563862671a3de0fb9e06d0491cd6ef}{display}} () const
 \begin{DoxyCompactList}\small\item\em Display a matrix in its natural shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 hand-\/made (row major) matrix class that stores a double matrix in a dynamic flat double array 
 
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00010}{10}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+
 \label{doc-constructors}
 \Hypertarget{class_matrix_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_matrix_abad6f393be565eda9d946bd3c1c4a8d3}\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_matrix_abad6f393be565eda9d946bd3c1c4a8d3} 
+Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{int}]{n\+\_\+rows}{ = {\ttfamily 0}, }\item[{int}]{n\+\_\+cols}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Initializes a matrix of size (n\+\_\+rows, n\+\_\+cols). 
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+\Hypertarget{class_matrix_a80be9959061e3bfa4044a75cec9ffe3d}\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_matrix_a80be9959061e3bfa4044a75cec9ffe3d} 
+Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{int}]{n\+\_\+rows}{, }\item[{int}]{n\+\_\+cols}{, }\item[{double}]{v\+\_\+init}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a matrix of size (n\+\_\+rows, n\+\_\+cols) filled with v\+\_\+init values. 
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
 \Hypertarget{class_matrix_a96c18f748b3df19500bf2f8c837ee5bc}\index{Matrix@{Matrix}!Matrix@{Matrix}}
 \index{Matrix@{Matrix}!Matrix@{Matrix}}
-\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily \label{class_matrix_a96c18f748b3df19500bf2f8c837ee5bc} 
 Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{mat}{}\end{DoxyParamCaption})}
 
@@ -65,9 +101,13 @@ copy constructor
 \mbox{\texttt{in}}  & {\em mat} & matrix to copy \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
 \Hypertarget{class_matrix_a83398e3d63f69d95d054d27852db2f6b}\index{Matrix@{Matrix}!Matrix@{Matrix}}
 \index{Matrix@{Matrix}!Matrix@{Matrix}}
-\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily \label{class_matrix_a83398e3d63f69d95d054d27852db2f6b} 
 Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&\&}]{mat}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
@@ -85,9 +125,69 @@ used when returning a matrix
 \end{DoxyParams}
 
 
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+\Hypertarget{class_matrix_a9b1c3627f573d78a2f08623fdfef990f}\index{Matrix@{Matrix}!````~Matrix@{\texorpdfstring{$\sim$}{\string~}Matrix}}
+\index{````~Matrix@{\texorpdfstring{$\sim$}{\string~}Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Matrix()}{\string~Matrix()}}
+{\footnotesize\ttfamily \label{class_matrix_a9b1c3627f573d78a2f08623fdfef990f} 
+Matrix\+::\texorpdfstring{$\sim$}{\string~}\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor for any matrix. 
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+
+
 \label{doc-func-members}
 \Hypertarget{class_matrix_doc-func-members}
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_matrix_a1f563862671a3de0fb9e06d0491cd6ef}\index{Matrix@{Matrix}!display@{display}}
+\index{display@{display}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily \label{class_matrix_a1f563862671a3de0fb9e06d0491cd6ef} 
+void Matrix\+::display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Display a matrix in its natural shape. 
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+\Hypertarget{class_matrix_a6cb4735dadc364c543bb667468b0fac8}\index{Matrix@{Matrix}!n\_cols@{n\_cols}}
+\index{n\_cols@{n\_cols}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{n\_cols()}{n\_cols()}}
+{\footnotesize\ttfamily \label{class_matrix_a6cb4735dadc364c543bb667468b0fac8} 
+int Matrix\+::n\+\_\+cols (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns number of columns of the matrix. 
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
+\Hypertarget{class_matrix_a7d4293b74029beb92af3d47fdcb7c18c}\index{Matrix@{Matrix}!n\_rows@{n\_rows}}
+\index{n\_rows@{n\_rows}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{n\_rows()}{n\_rows()}}
+{\footnotesize\ttfamily \label{class_matrix_a7d4293b74029beb92af3d47fdcb7c18c} 
+int Matrix\+::n\+\_\+rows (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns number of rows of the matrix. 
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
 \Hypertarget{class_matrix_a3655359b1f9451cb7b589c3a9bc5c7f0}\index{Matrix@{Matrix}!operator=@{operator=}}
 \index{operator=@{operator=}!Matrix@{Matrix}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -106,6 +206,10 @@ Copy assignment for a matrix.
 \begin{DoxyReturn}{Returns}
 a deep copy of the right member (matrix) 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
 \Hypertarget{class_matrix_a4ecdb2efefd8852302f38a309363352d}\index{Matrix@{Matrix}!operator=@{operator=}}
 \index{operator=@{operator=}!Matrix@{Matrix}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -124,6 +228,10 @@ semantic move
 \begin{DoxyReturn}{Returns}
 matrix composed of the same data (pointer copy) of the right member 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{matrix_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}}.
+
 \Hypertarget{class_matrix_a28f3ae2a31b6e879b737317f871f4731}\index{Matrix@{Matrix}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!Matrix@{Matrix}}
 \doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -142,6 +250,10 @@ made it "{}inline"{} for performance purpose
 {\em i} & row index \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
 \Hypertarget{class_matrix_a9d981e97582e6730c1d17bc313e5d52b}\index{Matrix@{Matrix}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!Matrix@{Matrix}}
 \doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -160,6 +272,10 @@ made it "{}inline"{} for performance purpose
 \mbox{\texttt{in}}  & {\em i} & row index \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00063}{63}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

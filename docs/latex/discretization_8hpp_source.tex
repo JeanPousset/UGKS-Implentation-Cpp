@@ -1,88 +1,88 @@
 \doxysection{discretization.\+hpp}
 \hypertarget{discretization_8hpp_source}{}\label{discretization_8hpp_source}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DISCRETIZATION\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DISCRETIZATION\_H}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}nlohmann/json.hpp"{}}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{using\ }json\ =\ nlohmann::json;\ \textcolor{comment}{//\ for\ easy\ json\ handle}}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00015\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_discretization_ae3ab80b6d45b13e36b115a18055ac3a7}{Discretization}}\ \{}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}};\ }
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_discretization_abc7bf514d6f42883974f6bd924c40d3b}{Nt}};\ }
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{double}\ *\mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}};\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}};\ }
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_a8704c5f82a8eb03ec735c16e8e7ec742}{normV2}};\ }
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}};\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}};\ }
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_af881ef9e25d682d557870c1d6e054589}{dx}};\ }
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{double}\ *\mbox{\hyperlink{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd}{X}};\ }
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{struct_discretization_ae3ab80b6d45b13e36b115a18055ac3a7}{Discretization}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}},\ \textcolor{keywordtype}{double}\ Tf,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}},\ \textcolor{keywordtype}{double}\ v\_max,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}});}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{inline}\ json\ \mbox{\hyperlink{struct_discretization_a9ad362be81d7bc4cfc54aa0cec41b292}{to\_json}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{struct_discretization_a8bbbf5f4df316458f6eca4b3e090a3db}{\string~Discretization}}();}
-\DoxyCodeLine{00044\ \};}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \textcolor{comment}{//\ Struct\ constructor}}
-\DoxyCodeLine{00047\ \mbox{\hyperlink{struct_discretization_ae3ab80b6d45b13e36b115a18055ac3a7}{Discretization::Discretization}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}},\ \textcolor{keywordtype}{double}\ Tf,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}},\ \textcolor{keywordtype}{double}\ v\_max,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}},}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}})\ :\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}}(\mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}}),\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}}(\mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}}),\ \mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}}(\mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}}),\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}}(\mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}})\ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Time\ discretization}}
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Nt\_tmp\ =\ Tf\ /\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}};}
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(Nt\_tmp\ -\/\ std::round(Nt\_tmp))\ >\ 1e-\/12)\ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ if\ Tf\ is\ divisible\ by\ dt\ (allow\ error\ because\ of\ numeric\ encoding\ of\ fload)}}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}mod("{}}\ <<\ Tf\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}}\ <<\ \textcolor{stringliteral}{"{})\ =\ "{}}\ <<\ std::fmod(Tf,\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}})\ <<\ std::endl;}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Error\ in\ discretization\ :\ please\ choose\ a\ final\ time\ Tf\ divisible\ by\ dt"{}});}
-\DoxyCodeLine{00055\ \ \ \ \ \}}
-\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{struct_discretization_abc7bf514d6f42883974f6bd924c40d3b}{Nt}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(Nt\_tmp);}
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ Linear\ discretization\ of\ the\ (symmetric)\ velocity\ domain\ [-\/v\_max,\ v\_max]}}
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ -\/>\ it's\ made\ so\ to\ optimize\ the\ number\ of\ multiplication\ /\ division\ performed}}
-\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[2\ *\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}}];}
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{double}\ v\ =\ 0.;}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dv\ =\ v\_max\ /\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}};}
-\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{struct_discretization_a8704c5f82a8eb03ec735c16e8e7ec742}{normV2}}\ =\ 0.;}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}};\ ++i)\ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ v\ =\ i\ *\ dv;}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}}[i]\ =\ -\/v;}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}}[\mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}}\ +\ i]\ =\ v;}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_discretization_a8704c5f82a8eb03ec735c16e8e7ec742}{normV2}}\ +=\ v\ *\ v;}
-\DoxyCodeLine{00068\ \ \ \ \ \}}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ Linear\ discretization\ of\ the\ space\ domain}}
-\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd}{X}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[\mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}}+1];}
-\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{struct_discretization_af881ef9e25d682d557870c1d6e054589}{dx}}\ =\ \mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}}\ /\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}};\ \textcolor{comment}{//\ Here\ the\ number\ of\ space\ node\ is\ Nx+1}}
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}}\ +\ 1;\ ++i)\ \{\ \mbox{\hyperlink{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd}{X}}[i]\ =\ \mbox{\hyperlink{struct_discretization_af881ef9e25d682d557870c1d6e054589}{dx}}\ *\ i;\ \}}
-\DoxyCodeLine{00074\ \}}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \textcolor{comment}{//\ Exports\ discretization\ parameters\ into\ a\ json\ instance\ that'll\ be\ saved\ into\ a\ json\ file}}
-\DoxyCodeLine{00077\ json\ \mbox{\hyperlink{struct_discretization_a9ad362be81d7bc4cfc54aa0cec41b292}{Discretization::to\_json}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00078\ \ \ \ \ json\ j;}
-\DoxyCodeLine{00079\ \ \ \ \ j[\textcolor{stringliteral}{"{}dt"{}}]\ =\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}};}
-\DoxyCodeLine{00080\ \ \ \ \ j[\textcolor{stringliteral}{"{}Nt"{}}]\ =\ \mbox{\hyperlink{struct_discretization_abc7bf514d6f42883974f6bd924c40d3b}{Nt}};}
-\DoxyCodeLine{00081\ \ \ \ \ j[\textcolor{stringliteral}{"{}N"{}}]\ =\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}};}
-\DoxyCodeLine{00082\ \ \ \ \ j[\textcolor{stringliteral}{"{}normV2"{}}]\ =\ \mbox{\hyperlink{struct_discretization_a8704c5f82a8eb03ec735c16e8e7ec742}{normV2}};}
-\DoxyCodeLine{00083\ \ \ \ \ j[\textcolor{stringliteral}{"{}L"{}}]\ =\ \mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}};}
-\DoxyCodeLine{00084\ \ \ \ \ j[\textcolor{stringliteral}{"{}Nx"{}}]\ =\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}};}
-\DoxyCodeLine{00085\ \ \ \ \ j[\textcolor{stringliteral}{"{}dx"{}}]\ =\ \mbox{\hyperlink{struct_discretization_af881ef9e25d682d557870c1d6e054589}{dx}};}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ Export\ arrays\ as\ std::vector\ for\ JSON}}
-\DoxyCodeLine{00088\ \ \ \ \ j[\textcolor{stringliteral}{"{}V"{}}]\ =\ std::vector<double>(\mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}},\ \mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}}\ +\ 2\ *\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}});}
-\DoxyCodeLine{00089\ \ \ \ \ j[\textcolor{stringliteral}{"{}X"{}}]\ =\ std::vector<double>(\mbox{\hyperlink{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd}{X}},\ \mbox{\hyperlink{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd}{X}}\ +\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}}\ +\ 1);}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{return}\ j;}
-\DoxyCodeLine{00092\ \}}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00094\ \textcolor{comment}{//\ Destructor:\ deletes\ the\ velocity\ and\ space\ arrays\ (dynamically\ allocated)\ */}}
-\DoxyCodeLine{00095\ \mbox{\hyperlink{struct_discretization_a8bbbf5f4df316458f6eca4b3e090a3db}{Discretization::\string~Discretization}}()\ \{}
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}};}
-\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd}{X}};}
-\DoxyCodeLine{00098\ \}}
-\DoxyCodeLine{00099\ }
-\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//DISCRETIZATION\_H}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ DISCRETIZATION\_H}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ DISCRETIZATION\_H}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}nlohmann/json.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00008}00008\ \textcolor{keyword}{using\ }json\ =\ nlohmann::json;\ \textcolor{comment}{//\ for\ easy\ json\ handle}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00015}\mbox{\hyperlink{struct_discretization}{00015}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_discretization_ae3ab80b6d45b13e36b115a18055ac3a7}{Discretization}}\ \{}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00016}\mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{00016}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}};\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00017}\mbox{\hyperlink{struct_discretization_abc7bf514d6f42883974f6bd924c40d3b}{00017}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_discretization_abc7bf514d6f42883974f6bd924c40d3b}{Nt}};\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00018}\mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{00018}}\ \ \ \ \ \textcolor{keywordtype}{double}\ *\mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}};\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00019}\mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{00019}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}};\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00020}\mbox{\hyperlink{struct_discretization_a8704c5f82a8eb03ec735c16e8e7ec742}{00020}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_a8704c5f82a8eb03ec735c16e8e7ec742}{normV2}};\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00021}\mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{00021}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}};\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00022}\mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{00022}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}};\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00023}\mbox{\hyperlink{struct_discretization_af881ef9e25d682d557870c1d6e054589}{00023}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_af881ef9e25d682d557870c1d6e054589}{dx}};\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00024}\mbox{\hyperlink{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd}{00024}}\ \ \ \ \ \textcolor{keywordtype}{double}\ *\mbox{\hyperlink{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd}{X}};\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{struct_discretization_ae3ab80b6d45b13e36b115a18055ac3a7}{Discretization}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}},\ \textcolor{keywordtype}{double}\ Tf,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}},\ \textcolor{keywordtype}{double}\ v\_max,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}});}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{inline}\ json\ \mbox{\hyperlink{struct_discretization_a9ad362be81d7bc4cfc54aa0cec41b292}{to\_json}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{struct_discretization_a8bbbf5f4df316458f6eca4b3e090a3db}{\string~Discretization}}();}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00044}00044\ \};}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00046}00046\ \textcolor{comment}{//\ Struct\ constructor}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00047}\mbox{\hyperlink{struct_discretization_ae3ab80b6d45b13e36b115a18055ac3a7}{00047}}\ \mbox{\hyperlink{struct_discretization_ae3ab80b6d45b13e36b115a18055ac3a7}{Discretization::Discretization}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}},\ \textcolor{keywordtype}{double}\ Tf,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}},\ \textcolor{keywordtype}{double}\ v\_max,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}},}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}})\ :\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}}(\mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}}),\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}}(\mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}}),\ \mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}}(\mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}}),\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}}(\mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}})\ \{}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ Time\ discretization}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Nt\_tmp\ =\ Tf\ /\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}};}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(Nt\_tmp\ -\/\ std::round(Nt\_tmp))\ >\ 1e-\/12)\ \{}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ if\ Tf\ is\ divisible\ by\ dt\ (allow\ error\ because\ of\ numeric\ encoding\ of\ fload)}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}mod("{}}\ <<\ Tf\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}}\ <<\ \textcolor{stringliteral}{"{})\ =\ "{}}\ <<\ std::fmod(Tf,\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Error\ in\ discretization\ :\ please\ choose\ a\ final\ time\ Tf\ divisible\ by\ dt"{}});}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{struct_discretization_abc7bf514d6f42883974f6bd924c40d3b}{Nt}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(Nt\_tmp);}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00057}00057\ \ \ \ \ \textcolor{comment}{//\ Linear\ discretization\ of\ the\ (symmetric)\ velocity\ domain\ [-\/v\_max,\ v\_max]}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ -\/>\ it's\ made\ so\ to\ optimize\ the\ number\ of\ multiplication\ /\ division\ performed}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[2\ *\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}}];}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{double}\ v\ =\ 0.;}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ dv\ =\ v\_max\ /\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}};}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{struct_discretization_a8704c5f82a8eb03ec735c16e8e7ec742}{normV2}}\ =\ 0.;}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}};\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ v\ =\ i\ *\ dv;}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}}[i]\ =\ -\/v;}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}}[\mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}}\ +\ i]\ =\ v;}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_discretization_a8704c5f82a8eb03ec735c16e8e7ec742}{normV2}}\ +=\ v\ *\ v;}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//\ Linear\ discretization\ of\ the\ space\ domain}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd}{X}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[\mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}}+1];}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{struct_discretization_af881ef9e25d682d557870c1d6e054589}{dx}}\ =\ \mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}}\ /\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}};\ \textcolor{comment}{//\ Here\ the\ number\ of\ space\ node\ is\ Nx+1}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}}\ +\ 1;\ ++i)\ \{\ \mbox{\hyperlink{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd}{X}}[i]\ =\ \mbox{\hyperlink{struct_discretization_af881ef9e25d682d557870c1d6e054589}{dx}}\ *\ i;\ \}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00076}00076\ \textcolor{comment}{//\ Exports\ discretization\ parameters\ into\ a\ json\ instance\ that'll\ be\ saved\ into\ a\ json\ file}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00077}\mbox{\hyperlink{struct_discretization_a9ad362be81d7bc4cfc54aa0cec41b292}{00077}}\ json\ \mbox{\hyperlink{struct_discretization_a9ad362be81d7bc4cfc54aa0cec41b292}{Discretization::to\_json}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00078}00078\ \ \ \ \ json\ j;}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00079}00079\ \ \ \ \ j[\textcolor{stringliteral}{"{}dt"{}}]\ =\ \mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}};}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00080}00080\ \ \ \ \ j[\textcolor{stringliteral}{"{}Nt"{}}]\ =\ \mbox{\hyperlink{struct_discretization_abc7bf514d6f42883974f6bd924c40d3b}{Nt}};}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00081}00081\ \ \ \ \ j[\textcolor{stringliteral}{"{}N"{}}]\ =\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}};}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00082}00082\ \ \ \ \ j[\textcolor{stringliteral}{"{}normV2"{}}]\ =\ \mbox{\hyperlink{struct_discretization_a8704c5f82a8eb03ec735c16e8e7ec742}{normV2}};}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00083}00083\ \ \ \ \ j[\textcolor{stringliteral}{"{}L"{}}]\ =\ \mbox{\hyperlink{struct_discretization_aea9f6e9542038e361ac5e523ba8a0684}{L}};}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00084}00084\ \ \ \ \ j[\textcolor{stringliteral}{"{}Nx"{}}]\ =\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}};}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00085}00085\ \ \ \ \ j[\textcolor{stringliteral}{"{}dx"{}}]\ =\ \mbox{\hyperlink{struct_discretization_af881ef9e25d682d557870c1d6e054589}{dx}};}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00087}00087\ \ \ \ \ \textcolor{comment}{//\ Export\ arrays\ as\ std::vector\ for\ JSON}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00088}00088\ \ \ \ \ j[\textcolor{stringliteral}{"{}V"{}}]\ =\ std::vector<double>(\mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}},\ \mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}}\ +\ 2\ *\ \mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}});}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00089}00089\ \ \ \ \ j[\textcolor{stringliteral}{"{}X"{}}]\ =\ std::vector<double>(\mbox{\hyperlink{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd}{X}},\ \mbox{\hyperlink{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd}{X}}\ +\ \mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}}\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{return}\ j;}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00092}00092\ \}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00094}00094\ \textcolor{comment}{//\ Destructor:\ deletes\ the\ velocity\ and\ space\ arrays\ (dynamically\ allocated)\ */}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00095}\mbox{\hyperlink{struct_discretization_a8bbbf5f4df316458f6eca4b3e090a3db}{00095}}\ \mbox{\hyperlink{struct_discretization_a8bbbf5f4df316458f6eca4b3e090a3db}{Discretization::\string~Discretization}}()\ \{}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00096}00096\ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}};}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00097}00097\ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{struct_discretization_a7fff05494e2aee3aae1aed55be38a0cd}{X}};}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{discretization_8hpp_source_l00100}00100\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//DISCRETIZATION\_H}}
 
 \end{DoxyCode}

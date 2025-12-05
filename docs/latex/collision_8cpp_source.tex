@@ -1,0 +1,34 @@
+\doxysection{collision.\+cpp}
+\hypertarget{collision_8cpp_source}{}\label{collision_8cpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}collision.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00004}00004\ \textcolor{comment}{//\ DISTRIBUTION\ UPDATES}}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00006}00006\ \textcolor{comment}{//\ Updates\ (with\ BKG\ formula)\ distribution\ matrix\ F\ at\ time\ n+1\ for\ each\ space\ node\ (x\_i\ i\ in\ [[1,Nx+1]])\ and\ each\ velocity\ v\_j(j\ in\ [[-\/N,N]])}}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00007}\mbox{\hyperlink{class_b_g_k_accf135b7654b4d0f83faf43c5175294d}{00007}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_b_g_k_accf135b7654b4d0f83faf43c5175294d}{BGK::distribution\_update}}(\mbox{\hyperlink{class_matrix}{Matrix}}\ \&F,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_matrix}{Matrix}}\ \&φ,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *ρ\_np1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_discretization}{Discretization}}\ \&δ,\ \textcolor{keywordtype}{double}\ σ,\ \textcolor{keywordtype}{double}\ eta,\ \textcolor{keywordtype}{double}\ ε)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{comment}{//\ precomputed\ coefficients\ to\ avoid\ useless\ multiplication\ and\ divisions}}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{comment}{//\ -\/>\ the\ optimal\ way\ would\ be\ to\ compute\ these\ coef\ at\ the\ beginning\ of\ the\ solver,\ but\ it'll\ lose\ the\ genericity\ of\ the\ formulation}}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ K\ =\ σ\ *\ δ.\mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}}\ /\ (ε\ *\ eta);}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ coef\ =\ 1.\ /\ (1.\ +\ K);}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ δ\_ratio\ =\ δ.\mbox{\hyperlink{struct_discretization_ac57a13831e28205af7eaf71436082466}{dt}}\ /\ δ.\mbox{\hyperlink{struct_discretization_af881ef9e25d682d557870c1d6e054589}{dx}};}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//\ Special\ case\ for\ the\ first\ and\ last\ space\ nodes\ (x\ =\ 0,\ L)\ =>\ periodic\ conditions}}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 2\ *\ δ.\mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}};\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ F[0][j]\ =\ coef\ *\ (F[0][j]\ +\ K\ *\ ρ\_np1[0]\ -\/\ δ\_ratio\ *\ (φ[0][j]\ -\/\ φ[δ.\mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}}\ -\/\ 1][j]));}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ F[δ.\mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}}][j]\ =\ F[0][j];\ \textcolor{comment}{//\ Same\ value\ (periodic\ conditions)}}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ Other\ nodes}}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ δ.\mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}};\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 2\ *\ δ.\mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}};\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ F[i][j]\ =\ coef\ *\ (F[i][j]\ +\ K\ *\ ρ\_np1[i]\ -\/\ δ\_ratio\ *\ (φ[i][j]\ -\/\ φ[i-\/1][j]));}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00027}00027\ \textcolor{comment}{//\ [TO\ DO]}}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00028}\mbox{\hyperlink{class_focker_plank_a851ff3d3918fb8b4f3ba0fc4e1f1d96b}{00028}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_focker_plank_a851ff3d3918fb8b4f3ba0fc4e1f1d96b}{FockerPlank::distribution\_update}}(\mbox{\hyperlink{class_matrix}{Matrix}}\ \&F,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_matrix}{Matrix}}\ \&φ,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *ρ\_np1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_discretization}{Discretization}}\ \&δ,\ \textcolor{keywordtype}{double}\ σ,\ \textcolor{keywordtype}{double}\ eta,\ \textcolor{keywordtype}{double}\ ε)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{collision_8cpp_source_l00029}00029\ \}}
+
+\end{DoxyCode}

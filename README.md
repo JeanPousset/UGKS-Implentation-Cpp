@@ -39,7 +39,7 @@ graph TD;
 
 ## Documentation
 
-I am documenting with Doxygen as I develop and will host the docs on GitHub Pages for easier access.
+I used Doxygen, you can find the documentation on this [repo's github page](https://jeanpousset.github.io/UGKS-Implentation-Cpp/md_README.html)
 
 ## Bibliography
 Crouseilles, Nicolas & Julien, Mathiaud & Mieussens, Luc. (2025). Generalized UGK scheme in the diffusive limit. 10.48550/arXiv.2507.03385. [ArXiv link](https://arxiv.org/abs/2507.03385)

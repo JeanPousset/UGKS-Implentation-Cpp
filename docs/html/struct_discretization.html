@@ -96,49 +96,46 @@ $(function(){initNavTree('struct_discretization.html','','struct_discretization-
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="discretization_8hpp_source.html">discretization.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Discretization:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="struct_discretization__coll__graph.svg" width="131" height="280"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae3ab80b6d45b13e36b115a18055ac3a7" id="r_ae3ab80b6d45b13e36b115a18055ac3a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3ab80b6d45b13e36b115a18055ac3a7">Discretization</a> (double <a class="el" href="#ac57a13831e28205af7eaf71436082466">dt</a>, double Tf, int <a class="el" href="#ae49b0a8a274ed3fc37efb3076c8f792c">N</a>, double v_max, double <a class="el" href="#aea9f6e9542038e361ac5e523ba8a0684">L</a>, int <a class="el" href="#a42253f61651494a9c0b5b6e974c7ec5e">Nx</a>)</td></tr>
 <tr class="memdesc:ae3ab80b6d45b13e36b115a18055ac3a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor : builds and stores the velocities and space domain + the time step.  <br /></td></tr>
-<tr class="memitem:a9ad362be81d7bc4cfc54aa0cec41b292" id="r_a9ad362be81d7bc4cfc54aa0cec41b292"><td class="memItemLeft" align="right" valign="top"><a id="a9ad362be81d7bc4cfc54aa0cec41b292" name="a9ad362be81d7bc4cfc54aa0cec41b292"></a>
-json&#160;</td><td class="memItemRight" valign="bottom"><b>to_json</b> () const</td></tr>
-<tr class="memdesc:a9ad362be81d7bc4cfc54aa0cec41b292"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports discretization parameters into a json instance that'll be saved into a json file. <br /></td></tr>
-<tr class="memitem:a8bbbf5f4df316458f6eca4b3e090a3db" id="r_a8bbbf5f4df316458f6eca4b3e090a3db"><td class="memItemLeft" align="right" valign="top"><a id="a8bbbf5f4df316458f6eca4b3e090a3db" name="a8bbbf5f4df316458f6eca4b3e090a3db"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>~Discretization</b> ()</td></tr>
-<tr class="memdesc:a8bbbf5f4df316458f6eca4b3e090a3db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructors: deletes the velocity and space arrays (dynamically allocated). <br /></td></tr>
+<tr class="memitem:a9ad362be81d7bc4cfc54aa0cec41b292" id="r_a9ad362be81d7bc4cfc54aa0cec41b292"><td class="memItemLeft" align="right" valign="top">json&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ad362be81d7bc4cfc54aa0cec41b292">to_json</a> () const</td></tr>
+<tr class="memdesc:a9ad362be81d7bc4cfc54aa0cec41b292"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports discretization parameters into a json instance that'll be saved into a json file.  <br /></td></tr>
+<tr class="memitem:a8bbbf5f4df316458f6eca4b3e090a3db" id="r_a8bbbf5f4df316458f6eca4b3e090a3db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bbbf5f4df316458f6eca4b3e090a3db">~Discretization</a> ()</td></tr>
+<tr class="memdesc:a8bbbf5f4df316458f6eca4b3e090a3db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructors: deletes the velocity and space arrays (dynamically allocated).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ac57a13831e28205af7eaf71436082466" id="r_ac57a13831e28205af7eaf71436082466"><td class="memItemLeft" align="right" valign="top"><a id="ac57a13831e28205af7eaf71436082466" name="ac57a13831e28205af7eaf71436082466"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>dt</b></td></tr>
-<tr class="memdesc:ac57a13831e28205af7eaf71436082466"><td class="mdescLeft">&#160;</td><td class="mdescRight">time step. <br /></td></tr>
-<tr class="memitem:abc7bf514d6f42883974f6bd924c40d3b" id="r_abc7bf514d6f42883974f6bd924c40d3b"><td class="memItemLeft" align="right" valign="top"><a id="abc7bf514d6f42883974f6bd924c40d3b" name="abc7bf514d6f42883974f6bd924c40d3b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Nt</b></td></tr>
-<tr class="memdesc:abc7bf514d6f42883974f6bd924c40d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of time step <br /></td></tr>
-<tr class="memitem:a7d9755a51e5d5ac6cd87528489ff55c6" id="r_a7d9755a51e5d5ac6cd87528489ff55c6"><td class="memItemLeft" align="right" valign="top"><a id="a7d9755a51e5d5ac6cd87528489ff55c6" name="a7d9755a51e5d5ac6cd87528489ff55c6"></a>
-double *&#160;</td><td class="memItemRight" valign="bottom"><b>V</b></td></tr>
-<tr class="memdesc:a7d9755a51e5d5ac6cd87528489ff55c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">array of discrete velocities. <br /></td></tr>
-<tr class="memitem:ae49b0a8a274ed3fc37efb3076c8f792c" id="r_ae49b0a8a274ed3fc37efb3076c8f792c"><td class="memItemLeft" align="right" valign="top"><a id="ae49b0a8a274ed3fc37efb3076c8f792c" name="ae49b0a8a274ed3fc37efb3076c8f792c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>N</b></td></tr>
-<tr class="memdesc:ae49b0a8a274ed3fc37efb3076c8f792c"><td class="mdescLeft">&#160;</td><td class="mdescRight">half of discretization points number for the velocity domain [-v_max,+v_max]. <br /></td></tr>
-<tr class="memitem:a8704c5f82a8eb03ec735c16e8e7ec742" id="r_a8704c5f82a8eb03ec735c16e8e7ec742"><td class="memItemLeft" align="right" valign="top"><a id="a8704c5f82a8eb03ec735c16e8e7ec742" name="a8704c5f82a8eb03ec735c16e8e7ec742"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>normV2</b></td></tr>
-<tr class="memdesc:a8704c5f82a8eb03ec735c16e8e7ec742"><td class="mdescLeft">&#160;</td><td class="mdescRight">square of V's euclidian norm. <br /></td></tr>
-<tr class="memitem:aea9f6e9542038e361ac5e523ba8a0684" id="r_aea9f6e9542038e361ac5e523ba8a0684"><td class="memItemLeft" align="right" valign="top"><a id="aea9f6e9542038e361ac5e523ba8a0684" name="aea9f6e9542038e361ac5e523ba8a0684"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>L</b></td></tr>
-<tr class="memdesc:aea9f6e9542038e361ac5e523ba8a0684"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of the space domain. <br /></td></tr>
+<tr class="memitem:ac57a13831e28205af7eaf71436082466" id="r_ac57a13831e28205af7eaf71436082466"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac57a13831e28205af7eaf71436082466">dt</a></td></tr>
+<tr class="memdesc:ac57a13831e28205af7eaf71436082466"><td class="mdescLeft">&#160;</td><td class="mdescRight">time step.  <br /></td></tr>
+<tr class="memitem:abc7bf514d6f42883974f6bd924c40d3b" id="r_abc7bf514d6f42883974f6bd924c40d3b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc7bf514d6f42883974f6bd924c40d3b">Nt</a></td></tr>
+<tr class="memdesc:abc7bf514d6f42883974f6bd924c40d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of time step  <br /></td></tr>
+<tr class="memitem:a7d9755a51e5d5ac6cd87528489ff55c6" id="r_a7d9755a51e5d5ac6cd87528489ff55c6"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d9755a51e5d5ac6cd87528489ff55c6">V</a></td></tr>
+<tr class="memdesc:a7d9755a51e5d5ac6cd87528489ff55c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">array of discrete velocities.  <br /></td></tr>
+<tr class="memitem:ae49b0a8a274ed3fc37efb3076c8f792c" id="r_ae49b0a8a274ed3fc37efb3076c8f792c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae49b0a8a274ed3fc37efb3076c8f792c">N</a></td></tr>
+<tr class="memdesc:ae49b0a8a274ed3fc37efb3076c8f792c"><td class="mdescLeft">&#160;</td><td class="mdescRight">half of discretization points number for the velocity domain [-v_max,+v_max].  <br /></td></tr>
+<tr class="memitem:a8704c5f82a8eb03ec735c16e8e7ec742" id="r_a8704c5f82a8eb03ec735c16e8e7ec742"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8704c5f82a8eb03ec735c16e8e7ec742">normV2</a></td></tr>
+<tr class="memdesc:a8704c5f82a8eb03ec735c16e8e7ec742"><td class="mdescLeft">&#160;</td><td class="mdescRight">square of V's euclidian norm.  <br /></td></tr>
+<tr class="memitem:aea9f6e9542038e361ac5e523ba8a0684" id="r_aea9f6e9542038e361ac5e523ba8a0684"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea9f6e9542038e361ac5e523ba8a0684">L</a></td></tr>
+<tr class="memdesc:aea9f6e9542038e361ac5e523ba8a0684"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of the space domain.  <br /></td></tr>
 <tr class="memitem:a42253f61651494a9c0b5b6e974c7ec5e" id="r_a42253f61651494a9c0b5b6e974c7ec5e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42253f61651494a9c0b5b6e974c7ec5e">Nx</a></td></tr>
 <tr class="memdesc:a42253f61651494a9c0b5b6e974c7ec5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of cells  <br /></td></tr>
-<tr class="memitem:af881ef9e25d682d557870c1d6e054589" id="r_af881ef9e25d682d557870c1d6e054589"><td class="memItemLeft" align="right" valign="top"><a id="af881ef9e25d682d557870c1d6e054589" name="af881ef9e25d682d557870c1d6e054589"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>dx</b></td></tr>
-<tr class="memdesc:af881ef9e25d682d557870c1d6e054589"><td class="mdescLeft">&#160;</td><td class="mdescRight">∆x. <br /></td></tr>
-<tr class="memitem:a7fff05494e2aee3aae1aed55be38a0cd" id="r_a7fff05494e2aee3aae1aed55be38a0cd"><td class="memItemLeft" align="right" valign="top"><a id="a7fff05494e2aee3aae1aed55be38a0cd" name="a7fff05494e2aee3aae1aed55be38a0cd"></a>
-double *&#160;</td><td class="memItemRight" valign="bottom"><b>X</b></td></tr>
-<tr class="memdesc:a7fff05494e2aee3aae1aed55be38a0cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">nodes of the spacial discretization <br /></td></tr>
+<tr class="memitem:af881ef9e25d682d557870c1d6e054589" id="r_af881ef9e25d682d557870c1d6e054589"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af881ef9e25d682d557870c1d6e054589">dx</a></td></tr>
+<tr class="memdesc:af881ef9e25d682d557870c1d6e054589"><td class="mdescLeft">&#160;</td><td class="mdescRight">∆x.  <br /></td></tr>
+<tr class="memitem:a7fff05494e2aee3aae1aed55be38a0cd" id="r_a7fff05494e2aee3aae1aed55be38a0cd"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fff05494e2aee3aae1aed55be38a0cd">X</a></td></tr>
+<tr class="memdesc:a7fff05494e2aee3aae1aed55be38a0cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">nodes of the spacial discretization  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Gather information about time, space and velocity discretizations. </p>
+
+<p class="definition">Definition at line <a class="el" href="discretization_8hpp_source.html#l00015">15</a> of file <a class="el" href="discretization_8hpp_source.html">discretization.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae3ab80b6d45b13e36b115a18055ac3a7" name="ae3ab80b6d45b13e36b115a18055ac3a7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae3ab80b6d45b13e36b115a18055ac3a7">&#9670;&#160;</a></span>Discretization()</h2>
@@ -201,9 +198,178 @@ double *&#160;</td><td class="memItemRight" valign="bottom"><b>X</b></td></tr>
 </dl>
 <dl class="section warning"><dt>Warning</dt><dd>here the number of space node is Nx+1 ! </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="discretization_8hpp_source.html#l00047">47</a> of file <a class="el" href="discretization_8hpp_source.html">discretization.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8bbbf5f4df316458f6eca4b3e090a3db" name="a8bbbf5f4df316458f6eca4b3e090a3db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bbbf5f4df316458f6eca4b3e090a3db">&#9670;&#160;</a></span>~Discretization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Discretization::~Discretization </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructors: deletes the velocity and space arrays (dynamically allocated). </p>
+
+<p class="definition">Definition at line <a class="el" href="discretization_8hpp_source.html#l00095">95</a> of file <a class="el" href="discretization_8hpp_source.html">discretization.hpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a9ad362be81d7bc4cfc54aa0cec41b292" name="a9ad362be81d7bc4cfc54aa0cec41b292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ad362be81d7bc4cfc54aa0cec41b292">&#9670;&#160;</a></span>to_json()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">json Discretization::to_json </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exports discretization parameters into a json instance that'll be saved into a json file. </p>
+
+<p class="definition">Definition at line <a class="el" href="discretization_8hpp_source.html#l00077">77</a> of file <a class="el" href="discretization_8hpp_source.html">discretization.hpp</a>.</p>
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="ac57a13831e28205af7eaf71436082466" name="ac57a13831e28205af7eaf71436082466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac57a13831e28205af7eaf71436082466">&#9670;&#160;</a></span>dt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Discretization::dt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>time step. </p>
+
+<p class="definition">Definition at line <a class="el" href="discretization_8hpp_source.html#l00016">16</a> of file <a class="el" href="discretization_8hpp_source.html">discretization.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af881ef9e25d682d557870c1d6e054589" name="af881ef9e25d682d557870c1d6e054589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af881ef9e25d682d557870c1d6e054589">&#9670;&#160;</a></span>dx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Discretization::dx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>∆x. </p>
+
+<p class="definition">Definition at line <a class="el" href="discretization_8hpp_source.html#l00023">23</a> of file <a class="el" href="discretization_8hpp_source.html">discretization.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aea9f6e9542038e361ac5e523ba8a0684" name="aea9f6e9542038e361ac5e523ba8a0684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea9f6e9542038e361ac5e523ba8a0684">&#9670;&#160;</a></span>L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Discretization::L</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>length of the space domain. </p>
+
+<p class="definition">Definition at line <a class="el" href="discretization_8hpp_source.html#l00021">21</a> of file <a class="el" href="discretization_8hpp_source.html">discretization.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae49b0a8a274ed3fc37efb3076c8f792c" name="ae49b0a8a274ed3fc37efb3076c8f792c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae49b0a8a274ed3fc37efb3076c8f792c">&#9670;&#160;</a></span>N</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Discretization::N</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>half of discretization points number for the velocity domain [-v_max,+v_max]. </p>
+
+<p class="definition">Definition at line <a class="el" href="discretization_8hpp_source.html#l00019">19</a> of file <a class="el" href="discretization_8hpp_source.html">discretization.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8704c5f82a8eb03ec735c16e8e7ec742" name="a8704c5f82a8eb03ec735c16e8e7ec742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8704c5f82a8eb03ec735c16e8e7ec742">&#9670;&#160;</a></span>normV2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Discretization::normV2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>square of V's euclidian norm. </p>
+
+<p class="definition">Definition at line <a class="el" href="discretization_8hpp_source.html#l00020">20</a> of file <a class="el" href="discretization_8hpp_source.html">discretization.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abc7bf514d6f42883974f6bd924c40d3b" name="abc7bf514d6f42883974f6bd924c40d3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc7bf514d6f42883974f6bd924c40d3b">&#9670;&#160;</a></span>Nt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Discretization::Nt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>number of time step </p>
+
+<p class="definition">Definition at line <a class="el" href="discretization_8hpp_source.html#l00017">17</a> of file <a class="el" href="discretization_8hpp_source.html">discretization.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a42253f61651494a9c0b5b6e974c7ec5e" name="a42253f61651494a9c0b5b6e974c7ec5e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a42253f61651494a9c0b5b6e974c7ec5e">&#9670;&#160;</a></span>Nx</h2>
 
@@ -218,6 +384,44 @@ double *&#160;</td><td class="memItemRight" valign="bottom"><b>X</b></td></tr>
 
 <p>number of cells </p>
 <dl class="section warning"><dt>Warning</dt><dd>here the number of space node is Nx+1 ! </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="discretization_8hpp_source.html#l00022">22</a> of file <a class="el" href="discretization_8hpp_source.html">discretization.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7d9755a51e5d5ac6cd87528489ff55c6" name="a7d9755a51e5d5ac6cd87528489ff55c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d9755a51e5d5ac6cd87528489ff55c6">&#9670;&#160;</a></span>V</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* Discretization::V</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>array of discrete velocities. </p>
+
+<p class="definition">Definition at line <a class="el" href="discretization_8hpp_source.html#l00018">18</a> of file <a class="el" href="discretization_8hpp_source.html">discretization.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7fff05494e2aee3aae1aed55be38a0cd" name="a7fff05494e2aee3aae1aed55be38a0cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fff05494e2aee3aae1aed55be38a0cd">&#9670;&#160;</a></span>X</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* Discretization::X</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>nodes of the spacial discretization </p>
+
+<p class="definition">Definition at line <a class="el" href="discretization_8hpp_source.html#l00024">24</a> of file <a class="el" href="discretization_8hpp_source.html">discretization.hpp</a>.</p>
 
 </div>
 </div>

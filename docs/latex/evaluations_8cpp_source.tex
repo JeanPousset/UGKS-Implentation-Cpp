@@ -1,0 +1,74 @@
+\doxysection{evaluations.\+cpp}
+\hypertarget{evaluations_8cpp_source}{}\label{evaluations_8cpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}evaluations.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00003}00003\ \textcolor{comment}{//\ J\_i\string^(-\/,n)}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00004}00004\ \textcolor{keywordtype}{double}\ J\_i\_m(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *V,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *F\_n\_i,\ \textcolor{keywordtype}{int}\ N)\ \{}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00005}00005\ \ \ \ \ \textcolor{keywordtype}{double}\ res\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00007}00007\ \ \ \ \ \ \ \ \ res\ +=\ V[i]\ *\ F\_n\_i[i];}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00008}00008\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{return}\ res\ /\ (2\ *\ N);}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00010}00010\ \}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00012}00012\ \textcolor{comment}{//\ J\_i\string^(+,n)}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00013}00013\ \textcolor{keywordtype}{double}\ J\_i\_p(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *V,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *F\_n\_i,\ \textcolor{keywordtype}{int}\ N)\ \{}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{double}\ res\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ N\ +\ 1;\ j\ <\ 2\ *\ N;\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ res\ +=\ V[j]\ *\ F\_n\_i[j];}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{return}\ res\ /\ (2\ *\ N);}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00021}00021\ \textcolor{comment}{//\ ρ\_i\string^(-\/,n)}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00022}00022\ \textcolor{keywordtype}{double}\ ρ\_i\_m(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *F\_n\_i,\ \textcolor{keywordtype}{int}\ N)\ \{}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{double}\ res\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ N;\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ res\ +=\ F\_n\_i[j];}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{return}\ res\ /\ (2.\ *\ N);}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00030}00030\ \textcolor{comment}{//\ ρ\_i\string^(+,n)}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00031}00031\ \textcolor{keywordtype}{double}\ ρ\_i\_p(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *F\_n\_i,\ \textcolor{keywordtype}{int}\ N)\ \{}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{double}\ res\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ N\ +\ 1;\ j\ <\ 2\ *\ N;\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ res\ +=\ F\_n\_i[j];}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{return}\ res\ /\ (2.\ *\ N);}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00039}00039\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Interface\ evaluations\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00043}00043\ \textcolor{comment}{//\ Evaluate\ microscopic\ and\ macroscopic\ (avg)\ interface\ values\ φ\_i+1/2,j\ for\ (i,j)\ in\ [1,Nx]x[1:2N]\ and\ Φ\_i+1/2\ for\ \ i\ in\ [1,Nx]}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00044}00044\ \textcolor{keywordtype}{void}\ micro\_macro\_flux(\mbox{\hyperlink{class_matrix}{Matrix}}\ \&φ,\ \textcolor{keywordtype}{double}\ *Φ,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_matrix}{Matrix}}\ \&F,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *ρ,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_discretization}{Discretization}}\ \&δ,\ \textcolor{keywordtype}{double}\ A,}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ C,\ \textcolor{keywordtype}{double}\ D)\ \{}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ N\ =\ δ.\mbox{\hyperlink{struct_discretization_ae49b0a8a274ed3fc37efb3076c8f792c}{N}};}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{double}\ v\ =\ 0.;}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ δ.\mbox{\hyperlink{struct_discretization_a42253f61651494a9c0b5b6e974c7ec5e}{Nx}};\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ Φ[i]\ =\ 0.0;\ \textcolor{comment}{//\ reset\ macroscopic\ interface\ value\ Φ\_i+1/2}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ case\ where\ v\ <\ 0\ (take\ F\string^n\_(i+1,j)\ instead\ of\ F\string^n(i,j))}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ N;\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ δ.\mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}}[j];}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ φ[i][j]\ =\ A\ *\ F[i\ +\ 1][j]\ *\ v\ +\ C\ *\ (ρ\_i\_p(F[i],\ N)\ +\ ρ\_i\_m(F[i\ +\ 1],\ N))\ *\ v\ +\ D\ *\ v\ *\ v\ *\ (}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ρ[i\ +\ 1]\ -\/\ ρ[i])\ /\ δ.\mbox{\hyperlink{struct_discretization_af881ef9e25d682d557870c1d6e054589}{dx}};}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ Φ[i]\ +=\ φ[i][j];}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ case\ where\ v\ >\ 0\ (take\ F\string^n\_(i,j)\ instead\ of\ F\string^n(i+1,j))}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ N;\ j\ <\ 2\ *\ N;\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ δ.\mbox{\hyperlink{struct_discretization_a7d9755a51e5d5ac6cd87528489ff55c6}{V}}[j];}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ φ[i][j]\ =\ A\ *\ F[i][j]\ *\ v\ +\ C\ *\ (ρ\_i\_p(F[i],\ N)\ +\ ρ\_i\_m(F[i\ +\ 1],\ N))\ *\ v\ +\ D\ *\ v\ *\ v\ *\ (}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ρ[i\ +\ 1]\ -\/\ ρ[i])\ /\ δ.\mbox{\hyperlink{struct_discretization_af881ef9e25d682d557870c1d6e054589}{dx}};}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ Φ[i]\ +=\ φ[i][j];}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ Φ[i]\ /=\ 2\ *\ N;\ \textcolor{comment}{//\ divide\ at\ the\ end\ to\ get\ the\ average}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{evaluations_8cpp_source_l00069}00069\ \}}
+
+\end{DoxyCode}

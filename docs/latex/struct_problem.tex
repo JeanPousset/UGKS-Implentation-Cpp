@@ -9,11 +9,20 @@ Parameters that defines a problem.
 
 {\ttfamily \#include $<$problem.\+hpp$>$}
 
+
+
+Collaboration diagram for Problem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{struct_problem__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{struct_problem_ae7b8eb84961b2eede611eb76b64633e9}\label{struct_problem_ae7b8eb84961b2eede611eb76b64633e9} 
-{\bfseries Problem} (double σ, double eta, double ε, const \mbox{\hyperlink{struct_discretization}{Discretization}} \&δ, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_collision}{Collision}} $>$ collision, const std\+::function$<$ double(double, double)$>$ \&\mbox{\hyperlink{struct_problem_ac5f023d074cb48d93e91f9133297c785}{f0}}, const std\+::function$<$ double(double)$>$ \&\mbox{\hyperlink{struct_problem_acd76bc12b08367f72bb3f03903803e52}{ρ0}})
+\mbox{\hyperlink{struct_problem_ae7b8eb84961b2eede611eb76b64633e9}{Problem}} (double σ, double eta, double ε, const \mbox{\hyperlink{struct_discretization}{Discretization}} \&δ, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_collision}{Collision}} $>$ collision, const std\+::function$<$ double(double, double)$>$ \&\mbox{\hyperlink{struct_problem_ac5f023d074cb48d93e91f9133297c785}{f0}}, const std\+::function$<$ double(double)$>$ \&\mbox{\hyperlink{struct_problem_acd76bc12b08367f72bb3f03903803e52}{ρ0}})
 \item 
 void \mbox{\hyperlink{struct_problem_a0fb1a5ec39f0de6a3a73c4adf3087403}{export\+\_\+json}} (const std\+::string \&json\+\_\+name) const
 \begin{DoxyCompactList}\small\item\em exports problem data into a json file \end{DoxyCompactList}\item 
@@ -26,34 +35,25 @@ void \mbox{\hyperlink{struct_problem_ad82575264f247ffdbec721b7d32dccce}{time\+\_
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{struct_problem_a4ddb15f7ab05ceed31b627a00bd5fc34}\label{struct_problem_a4ddb15f7ab05ceed31b627a00bd5fc34} 
-double {\bfseries σ\+\_\+}
+double \mbox{\hyperlink{struct_problem_a4ddb15f7ab05ceed31b627a00bd5fc34}{σ\+\_\+}}
 \begin{DoxyCompactList}\small\item\em collision characteristic frequency \end{DoxyCompactList}\item 
-\Hypertarget{struct_problem_a02f42710cbee74c61f721e9e05dd4e76}\label{struct_problem_a02f42710cbee74c61f721e9e05dd4e76} 
-double {\bfseries eta\+\_\+}
+double \mbox{\hyperlink{struct_problem_a02f42710cbee74c61f721e9e05dd4e76}{eta\+\_\+}}
 \begin{DoxyCompactList}\small\item\em coefficient in front of df/dt \end{DoxyCompactList}\item 
-\Hypertarget{struct_problem_a0222bc2a3ceed74dbac67335243d8574}\label{struct_problem_a0222bc2a3ceed74dbac67335243d8574} 
-double {\bfseries ε\+\_\+}
+double \mbox{\hyperlink{struct_problem_a0222bc2a3ceed74dbac67335243d8574}{ε\+\_\+}}
 \begin{DoxyCompactList}\small\item\em diffusion behaviour coefficient (normalized mean free path) \end{DoxyCompactList}\item 
-\Hypertarget{struct_problem_a55ff482518cb6097cad5f1d5021cd5f9}\label{struct_problem_a55ff482518cb6097cad5f1d5021cd5f9} 
-double {\bfseries A\+\_\+}
+double \mbox{\hyperlink{struct_problem_a55ff482518cb6097cad5f1d5021cd5f9}{A\+\_\+}}
 \begin{DoxyCompactList}\small\item\em A(∆t,σ,η,ε) coefficient. \end{DoxyCompactList}\item 
-\Hypertarget{struct_problem_a9b25da86a8916c19fdbae181ba61bd3e}\label{struct_problem_a9b25da86a8916c19fdbae181ba61bd3e} 
-double {\bfseries C\+\_\+}
+double \mbox{\hyperlink{struct_problem_a9b25da86a8916c19fdbae181ba61bd3e}{C\+\_\+}}
 \begin{DoxyCompactList}\small\item\em C(∆t,σ,η,ε) coefficient. \end{DoxyCompactList}\item 
-\Hypertarget{struct_problem_a58bbccbdcf9d8d2a20fa5f4f0dde806d}\label{struct_problem_a58bbccbdcf9d8d2a20fa5f4f0dde806d} 
-double {\bfseries D\+\_\+}
+double \mbox{\hyperlink{struct_problem_a58bbccbdcf9d8d2a20fa5f4f0dde806d}{D\+\_\+}}
 \begin{DoxyCompactList}\small\item\em D(∆t,σ,η,ε) coefficient. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{struct_discretization}{Discretization}} \& \mbox{\hyperlink{struct_problem_ae2208161f11ea1856a628ea618f5d117}{δ\+\_\+}}
 \item 
-\Hypertarget{struct_problem_a14593c477ebb610e3f2bb79d8ccffdfa}\label{struct_problem_a14593c477ebb610e3f2bb79d8ccffdfa} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_collision}{Collision}} $>$ {\bfseries collision\+\_\+}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_collision}{Collision}} $>$ \mbox{\hyperlink{struct_problem_a14593c477ebb610e3f2bb79d8ccffdfa}{collision\+\_\+}}
 \begin{DoxyCompactList}\small\item\em Pointer to an instance of a subclass of \doxylink{class_collision}{Collision} (polymorphism). \end{DoxyCompactList}\item 
-\Hypertarget{struct_problem_ac5f023d074cb48d93e91f9133297c785}\label{struct_problem_ac5f023d074cb48d93e91f9133297c785} 
-std\+::function$<$ double(double, double)$>$ {\bfseries f0}
+std\+::function$<$ double(double, double)$>$ \mbox{\hyperlink{struct_problem_ac5f023d074cb48d93e91f9133297c785}{f0}}
 \begin{DoxyCompactList}\small\item\em Initial distribution. \end{DoxyCompactList}\item 
-\Hypertarget{struct_problem_acd76bc12b08367f72bb3f03903803e52}\label{struct_problem_acd76bc12b08367f72bb3f03903803e52} 
-std\+::function$<$ double(double)$>$ {\bfseries ρ0}
+std\+::function$<$ double(double)$>$ \mbox{\hyperlink{struct_problem_acd76bc12b08367f72bb3f03903803e52}{ρ0}}
 \begin{DoxyCompactList}\small\item\em Initial density. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -63,6 +63,25 @@ Parameters that defines a problem.
 \begin{DoxyWarning}{Warning}
 function as a member is not optimized and create a cost at each call not a problem for us because problem functions are only called in problem initialization 
 \end{DoxyWarning}
+
+
+Definition at line \mbox{\hyperlink{problem_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{problem_8hpp_source}{problem.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{struct_problem_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_problem_ae7b8eb84961b2eede611eb76b64633e9}\index{Problem@{Problem}!Problem@{Problem}}
+\index{Problem@{Problem}!Problem@{Problem}}
+\doxysubsubsection{\texorpdfstring{Problem()}{Problem()}}
+{\footnotesize\ttfamily \label{struct_problem_ae7b8eb84961b2eede611eb76b64633e9} 
+Problem\+::\+Problem (\begin{DoxyParamCaption}\item[{double}]{σ}{, }\item[{double}]{eta}{, }\item[{double}]{ε}{, }\item[{const \mbox{\hyperlink{struct_discretization}{Discretization}} \&}]{δ}{, }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_collision}{Collision}} $>$}]{collision}{, }\item[{const std\+::function$<$ double(double, double)$>$ \&}]{f0}{, }\item[{const std\+::function$<$ double(double)$>$ \&}]{ρ0}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{problem_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{problem_8cpp_source}{problem.\+cpp}}.
+
 
 
 \label{doc-func-members}
@@ -87,6 +106,10 @@ Updates density vector ρ at time n+1 for each space node (x\+\_\+i i in \mbox{[
 \mbox{\texttt{in}}  & {\em Φ} & macroscopic fluxes \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{problem_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{problem_8cpp_source}{problem.\+cpp}}.
+
 \Hypertarget{struct_problem_a0fb1a5ec39f0de6a3a73c4adf3087403}\index{Problem@{Problem}!export\_json@{export\_json}}
 \index{export\_json@{export\_json}!Problem@{Problem}}
 \doxysubsubsection{\texorpdfstring{export\_json()}{export\_json()}}
@@ -102,6 +125,10 @@ exports problem data into a json file
 {\em json\+\_\+name} & \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{problem_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{problem_8cpp_source}{problem.\+cpp}}.
+
 \Hypertarget{struct_problem_ad87ef395c47129c336a0904707917e7a}\index{Problem@{Problem}!solve@{solve}}
 \index{solve@{solve}!Problem@{Problem}}
 \doxysubsubsection{\texorpdfstring{solve()}{solve()}}
@@ -118,6 +145,10 @@ densities values for each time step t\+\_\+k / space node x\+\_\+i, (k,i) in \mb
 \begin{DoxyWarning}{Warning}
 must be deleted when return
 \end{DoxyWarning}
+
+
+Definition at line \mbox{\hyperlink{problem_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{problem_8cpp_source}{problem.\+cpp}}.
+
 \Hypertarget{struct_problem_ad82575264f247ffdbec721b7d32dccce}\index{Problem@{Problem}!time\_step@{time\_step}}
 \index{time\_step@{time\_step}!Problem@{Problem}}
 \doxysubsubsection{\texorpdfstring{time\_step()}{time\_step()}}
@@ -143,6 +174,10 @@ Computes problem variables (distribution F and densities ρ) at time n+1.
 \end{DoxyParams}
 
 
+Definition at line \mbox{\hyperlink{problem_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{problem_8cpp_source}{problem.\+cpp}}.
+
+
+
 \label{doc-variable-members}
 \Hypertarget{struct_problem_doc-variable-members}
 \doxysubsection{Member Data Documentation}
@@ -153,6 +188,136 @@ Computes problem variables (distribution F and densities ρ) at time n+1.
 const \mbox{\hyperlink{struct_discretization}{Discretization}}\& Problem\+::δ\+\_\+}
 
 Space, velocity and time discretization information -\/\texorpdfstring{$>$}{>} reference to not make a copy that will create problem with the dynamic arrays 
+
+Definition at line \mbox{\hyperlink{problem_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{problem_8hpp_source}{problem.\+hpp}}.
+
+\Hypertarget{struct_problem_a0222bc2a3ceed74dbac67335243d8574}\index{Problem@{Problem}!ε\_@{ε\_}}
+\index{ε\_@{ε\_}!Problem@{Problem}}
+\doxysubsubsection{\texorpdfstring{ε\_}{ε\_}}
+{\footnotesize\ttfamily \label{struct_problem_a0222bc2a3ceed74dbac67335243d8574} 
+double Problem\+::ε\+\_\+}
+
+
+
+diffusion behaviour coefficient (normalized mean free path) 
+
+
+
+Definition at line \mbox{\hyperlink{problem_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{problem_8hpp_source}{problem.\+hpp}}.
+
+\Hypertarget{struct_problem_acd76bc12b08367f72bb3f03903803e52}\index{Problem@{Problem}!ρ0@{ρ0}}
+\index{ρ0@{ρ0}!Problem@{Problem}}
+\doxysubsubsection{\texorpdfstring{ρ0}{ρ0}}
+{\footnotesize\ttfamily \label{struct_problem_acd76bc12b08367f72bb3f03903803e52} 
+std\+::function$<$double(double)$>$ Problem\+::ρ0}
+
+
+
+Initial density. 
+
+
+
+Definition at line \mbox{\hyperlink{problem_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{problem_8hpp_source}{problem.\+hpp}}.
+
+\Hypertarget{struct_problem_a4ddb15f7ab05ceed31b627a00bd5fc34}\index{Problem@{Problem}!σ\_@{σ\_}}
+\index{σ\_@{σ\_}!Problem@{Problem}}
+\doxysubsubsection{\texorpdfstring{σ\_}{σ\_}}
+{\footnotesize\ttfamily \label{struct_problem_a4ddb15f7ab05ceed31b627a00bd5fc34} 
+double Problem\+::σ\+\_\+}
+
+
+
+collision characteristic frequency 
+
+
+
+Definition at line \mbox{\hyperlink{problem_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{problem_8hpp_source}{problem.\+hpp}}.
+
+\Hypertarget{struct_problem_a55ff482518cb6097cad5f1d5021cd5f9}\index{Problem@{Problem}!A\_@{A\_}}
+\index{A\_@{A\_}!Problem@{Problem}}
+\doxysubsubsection{\texorpdfstring{A\_}{A\_}}
+{\footnotesize\ttfamily \label{struct_problem_a55ff482518cb6097cad5f1d5021cd5f9} 
+double Problem\+::\+A\+\_\+}
+
+
+
+A(∆t,σ,η,ε) coefficient. 
+
+
+
+Definition at line \mbox{\hyperlink{problem_8hpp_source_l00027}{27}} of file \mbox{\hyperlink{problem_8hpp_source}{problem.\+hpp}}.
+
+\Hypertarget{struct_problem_a9b25da86a8916c19fdbae181ba61bd3e}\index{Problem@{Problem}!C\_@{C\_}}
+\index{C\_@{C\_}!Problem@{Problem}}
+\doxysubsubsection{\texorpdfstring{C\_}{C\_}}
+{\footnotesize\ttfamily \label{struct_problem_a9b25da86a8916c19fdbae181ba61bd3e} 
+double Problem\+::\+C\+\_\+}
+
+
+
+C(∆t,σ,η,ε) coefficient. 
+
+
+
+Definition at line \mbox{\hyperlink{problem_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{problem_8hpp_source}{problem.\+hpp}}.
+
+\Hypertarget{struct_problem_a14593c477ebb610e3f2bb79d8ccffdfa}\index{Problem@{Problem}!collision\_@{collision\_}}
+\index{collision\_@{collision\_}!Problem@{Problem}}
+\doxysubsubsection{\texorpdfstring{collision\_}{collision\_}}
+{\footnotesize\ttfamily \label{struct_problem_a14593c477ebb610e3f2bb79d8ccffdfa} 
+std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_collision}{Collision}}$>$ Problem\+::collision\+\_\+}
+
+
+
+Pointer to an instance of a subclass of \doxylink{class_collision}{Collision} (polymorphism). 
+
+
+
+Definition at line \mbox{\hyperlink{problem_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{problem_8hpp_source}{problem.\+hpp}}.
+
+\Hypertarget{struct_problem_a58bbccbdcf9d8d2a20fa5f4f0dde806d}\index{Problem@{Problem}!D\_@{D\_}}
+\index{D\_@{D\_}!Problem@{Problem}}
+\doxysubsubsection{\texorpdfstring{D\_}{D\_}}
+{\footnotesize\ttfamily \label{struct_problem_a58bbccbdcf9d8d2a20fa5f4f0dde806d} 
+double Problem\+::\+D\+\_\+}
+
+
+
+D(∆t,σ,η,ε) coefficient. 
+
+
+
+Definition at line \mbox{\hyperlink{problem_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{problem_8hpp_source}{problem.\+hpp}}.
+
+\Hypertarget{struct_problem_a02f42710cbee74c61f721e9e05dd4e76}\index{Problem@{Problem}!eta\_@{eta\_}}
+\index{eta\_@{eta\_}!Problem@{Problem}}
+\doxysubsubsection{\texorpdfstring{eta\_}{eta\_}}
+{\footnotesize\ttfamily \label{struct_problem_a02f42710cbee74c61f721e9e05dd4e76} 
+double Problem\+::eta\+\_\+}
+
+
+
+coefficient in front of df/dt 
+
+
+
+Definition at line \mbox{\hyperlink{problem_8hpp_source_l00025}{25}} of file \mbox{\hyperlink{problem_8hpp_source}{problem.\+hpp}}.
+
+\Hypertarget{struct_problem_ac5f023d074cb48d93e91f9133297c785}\index{Problem@{Problem}!f0@{f0}}
+\index{f0@{f0}!Problem@{Problem}}
+\doxysubsubsection{\texorpdfstring{f0}{f0}}
+{\footnotesize\ttfamily \label{struct_problem_ac5f023d074cb48d93e91f9133297c785} 
+std\+::function$<$double(double, double)$>$ Problem\+::f0}
+
+
+
+Initial distribution. 
+
+
+
+Definition at line \mbox{\hyperlink{problem_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{problem_8hpp_source}{problem.\+hpp}}.
+
+
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

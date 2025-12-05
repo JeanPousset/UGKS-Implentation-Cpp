@@ -1,0 +1,5 @@
+<map id="FockerPlank" name="FockerPlank">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,201,146,328"/>
+<area shape="rect" id="Node000002" href="$class_collision.html" title="abstract class to handle various collision operators with polymorphism" alt="" coords="5,5,146,153"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,165,78,202,73,201,75,170"/>
+</map>
